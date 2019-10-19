@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0147F774235A7E4700196A38 /* OnCampusQs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0147F773235A7E4700196A38 /* OnCampusQs.storyboard */; };
+		01731047235A9EFF00B04B76 /* OnCampusQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01731046235A9EFF00B04B76 /* OnCampusQController.swift */; };
+		01731050235AD65200B04B76 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0173104F235AD65200B04B76 /* SwiftyJSON */; };
 		E71C54872356686B0055AE3F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C54862356686B0055AE3F /* RatingControl.swift */; };
 		E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C774234E9B2800BC32F4 /* AppDelegate.swift */; };
 		E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E784C778234E9B2800BC32F4 /* Main.storyboard */; };
@@ -18,6 +21,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0173103C235A87BC00B04B76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01731036235A87BB00B04B76 /* DropDown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A76440F1B676C2300BF1A2D;
+			remoteInfo = Demo;
+		};
+		0173103E235A87BC00B04B76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01731036235A87BB00B04B76 /* DropDown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A7644241B676C2300BF1A2D;
+			remoteInfo = DropDownTests;
+		};
+		01731040235A87BC00B04B76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01731036235A87BB00B04B76 /* DropDown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0AB5D8711D0EEECD002D3A17;
+			remoteInfo = DropDown;
+		};
+		01731042235A89A200B04B76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01731036235A87BB00B04B76 /* DropDown.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB5D8701D0EEECD002D3A17;
+			remoteInfo = DropDown;
+		};
 		E784C786234E9B3100BC32F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E784C769234E9B2700BC32F4 /* Project object */;
@@ -35,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0147F773235A7E4700196A38 /* OnCampusQs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnCampusQs.storyboard; sourceTree = "<group>"; };
+		01731036235A87BB00B04B76 /* DropDown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DropDown.xcodeproj; path = ../DropDown/DropDown.xcodeproj; sourceTree = "<group>"; };
+		01731046235A9EFF00B04B76 /* OnCampusQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnCampusQController.swift; sourceTree = "<group>"; };
 		E71C54862356686B0055AE3F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E784C771234E9B2800BC32F4 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E784C774234E9B2800BC32F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01731050235AD65200B04B76 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +111,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01731037235A87BB00B04B76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0173103D235A87BC00B04B76 /* Demo.app */,
+				0173103F235A87BC00B04B76 /* DropDownTests.xctest */,
+				01731041235A87BC00B04B76 /* DropDown.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E784C768234E9B2700BC32F4 = {
 			isa = PBXGroup;
 			children = (
+				01731036235A87BB00B04B76 /* DropDown.xcodeproj */,
 				E784C773234E9B2800BC32F4 /* SimpleApp */,
 				E784C788234E9B3100BC32F4 /* SimpleAppTests */,
 				E784C793234E9B3100BC32F4 /* SimpleAppUITests */,
@@ -99,13 +145,15 @@
 		E784C773234E9B2800BC32F4 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				01731046235A9EFF00B04B76 /* OnCampusQController.swift */,
+				0147F773235A7E4700196A38 /* OnCampusQs.storyboard */,
 				E784C774234E9B2800BC32F4 /* AppDelegate.swift */,
 				E784C778234E9B2800BC32F4 /* Main.storyboard */,
+				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
 				E71C54862356686B0055AE3F /* RatingControl.swift */,
 				E784C77B234E9B3000BC32F4 /* Assets.xcassets */,
 				E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
-				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -142,8 +190,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				01731043235A89A200B04B76 /* PBXTargetDependency */,
 			);
 			name = SimpleApp;
+			packageProductDependencies = (
+				0173104F235AD65200B04B76 /* SwiftyJSON */,
+			);
 			productName = SimpleApp;
 			productReference = E784C771234E9B2800BC32F4 /* SimpleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -221,8 +273,17 @@
 				Base,
 			);
 			mainGroup = E784C768234E9B2700BC32F4;
+			packageReferences = (
+				0173104E235AD65200B04B76 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = E784C772234E9B2800BC32F4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 01731037235A87BB00B04B76 /* Products */;
+					ProjectRef = 01731036235A87BB00B04B76 /* DropDown.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E784C770234E9B2700BC32F4 /* SimpleApp */,
@@ -232,6 +293,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		0173103D235A87BC00B04B76 /* Demo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Demo.app;
+			remoteRef = 0173103C235A87BC00B04B76 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0173103F235A87BC00B04B76 /* DropDownTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DropDownTests.xctest;
+			remoteRef = 0173103E235A87BC00B04B76 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		01731041235A87BC00B04B76 /* DropDown.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DropDown.framework;
+			remoteRef = 01731040235A87BC00B04B76 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		E784C76F234E9B2700BC32F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -239,6 +324,7 @@
 			files = (
 				E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */,
 				E784C77C234E9B3000BC32F4 /* Assets.xcassets in Resources */,
+				0147F774235A7E4700196A38 /* OnCampusQs.storyboard in Resources */,
 				E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +353,7 @@
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
 				E71C54872356686B0055AE3F /* RatingControl.swift in Sources */,
 				E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */,
+				01731047235A9EFF00B04B76 /* OnCampusQController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +376,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		01731043235A89A200B04B76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropDown;
+			targetProxy = 01731042235A89A200B04B76 /* PBXContainerItemProxy */;
+		};
 		E784C787234E9B3100BC32F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E784C770234E9B2700BC32F4 /* SimpleApp */;
@@ -376,6 +468,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-L/usr/local/opt/openssl/lib";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -430,6 +523,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-L/usr/local/opt/openssl/lib";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -447,6 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-I/usr/local/opt/openssl/include";
 				PRODUCT_BUNDLE_IDENTIFIER = "CSCI-187.SimpleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -464,6 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "-I/usr/local/opt/openssl/include";
 				PRODUCT_BUNDLE_IDENTIFIER = "CSCI-187.SimpleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -589,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0173104E235AD65200B04B76 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0173104F235AD65200B04B76 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0173104E235AD65200B04B76 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E784C769234E9B2700BC32F4 /* Project object */;
 }
