@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        DropDown.startListeningToKeyboard()
         return true
     }
 
@@ -42,10 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func didFinishLaunching(_ application: UIApplication) {
+    func application(_:didFinishLaunchingWithOptions:) {
         DropDown.startListeningToKeyboard()
     }
-
-
 }
 
