@@ -38,6 +38,7 @@ class OnCampusQController: UIViewController, UITextFieldDelegate, UIImagePickerC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Map the storyboard views to the respective drop down objects
         DormListObj.anchorView = DormView
         HobbyListObj.anchorView = HobbyView
         SuiteListObj.anchorView = SuiteView
