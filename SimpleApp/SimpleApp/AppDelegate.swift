@@ -18,9 +18,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GIDSignIn.sharedInstance()?.clientID = "com.googleusercontent.apps.785415036844-lpiqcpij4nqf4c9esiu6a1nphol89gej"
+        GIDSignIn.sharedInstance()?.clientID = "338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k.apps.googleusercontent.com"
+//        GIDSignin.sharedInstance()?.clientID = "com.googleusercontent.apps.338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k"
         GIDSignIn.sharedInstance()?.delegate = self
         return true
+    }
+    
+    //sign in handler/ connect handler
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!){
+        if let error = error{
+            if(error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have signed out since then.")
+            }
+            else{
+                print("\(error.localizedDescription)")
+            }
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"), object:nil,userInfo: nil)
+            return
+        }
+        let userID = user.userID //only for client side
+        let idToken = user.authentication.idToken //can send directly to server
+        let fullName = user.profile.name
+        let givenName = user.profile.givenName
+        let familyName = user.profile.familyName
+        let email = user.profile.email
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"),object:nil, userInfo: ["statusText": "Signed in user: \n\(fullName!)"])
+    }
+    
+    //disconnect handler
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!){
+        print("The user has disconnected from the app\n")
+        NotificationCenter.default.post(
+             name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+             object: nil,
+             userInfo: ["statusText": "User has disconnected."])
+    }
+    
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool{
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    //for ios 8.0
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -44,7 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
+
 

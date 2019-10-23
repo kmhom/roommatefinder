@@ -3,19 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7AF1D7495DCF9B3ED2825C70 /* Pods_SimpleApp_SimpleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD57BD0ED543E6EA7265D7EB /* Pods_SimpleApp_SimpleAppUITests.framework */; };
-		89E2E328A32C49954996AD78 /* Pods_SimpleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A54033EBDBFE46F7CCD7C1E /* Pods_SimpleAppTests.framework */; };
-		BA970D4B235A9553004C97B8 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA970D4A235A9553004C97B8 /* credentials.plist */; };
-		BAA7DBB6235A904100FD14E2 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7DBB5235A904100FD14E2 /* GoogleSignInViewController.swift */; };
+		7CD85A86A00AC8BAFB99FFDE /* Pods_SimpleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7290FF1638EE82122B9BAAB /* Pods_SimpleAppTests.framework */; };
+		BA03658D235E185900D9F487 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA03658C235E185800D9F487 /* GoogleSignIn.bundle */; };
+		BA03658E235E185900D9F487 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA03658C235E185800D9F487 /* GoogleSignIn.bundle */; };
+		BA03658F235E185900D9F487 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA03658C235E185800D9F487 /* GoogleSignIn.bundle */; };
+		BA036590235E188100D9F487 /* GoogleSignIn.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = BA03658C235E185800D9F487 /* GoogleSignIn.bundle */; };
+		BA036592235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036591235E189F00D9F487 /* GoogleSignIn.framework */; };
+		BA036593235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036591235E189F00D9F487 /* GoogleSignIn.framework */; };
+		BA036594235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036591235E189F00D9F487 /* GoogleSignIn.framework */; };
+		BA036596235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036595235E18AF00D9F487 /* GoogleSignInDependencies.framework */; };
+		BA036597235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036595235E18AF00D9F487 /* GoogleSignInDependencies.framework */; };
+		BA036598235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA036595235E18AF00D9F487 /* GoogleSignInDependencies.framework */; };
+		BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */; };
+		BA03659C235E3F4200D9F487 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA03659B235E3F4200D9F487 /* credentials-2.plist */; };
+		BA03659D235E3F4200D9F487 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA03659B235E3F4200D9F487 /* credentials-2.plist */; };
+		BA03659E235E3F4200D9F487 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA03659B235E3F4200D9F487 /* credentials-2.plist */; };
+		BA0365A12360319800D9F487 /* sculogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0365A02360319800D9F487 /* sculogo.png */; };
 		D7081ED8558260AA867B59A5 /* Pods_SimpleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */; };
 		E71C54872356686B0055AE3F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C54862356686B0055AE3F /* RatingControl.swift */; };
 		E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C774234E9B2800BC32F4 /* AppDelegate.swift */; };
 		E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E784C778234E9B2800BC32F4 /* Main.storyboard */; };
-		E784C77C234E9B3000BC32F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E784C77B234E9B3000BC32F4 /* Assets.xcassets */; };
 		E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */; };
 		E784C78A234E9B3100BC32F4 /* SimpleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C789234E9B3100BC32F4 /* SimpleAppTests.swift */; };
 		E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C7A2234E9CD600BC32F4 /* ViewController.swift */; };
@@ -40,21 +52,25 @@
 
 /* Begin PBXFileReference section */
 		0BE74F6185639DC42C1F872E /* Pods-SimpleApp-SimpleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp-SimpleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleApp-SimpleAppUITests/Pods-SimpleApp-SimpleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1A54033EBDBFE46F7CCD7C1E /* Pods_SimpleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC58ADC69475276209E17E /* Pods-SimpleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleApp/Pods-SimpleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3AFCF2D7BBFA44588E0BC837 /* Pods-SimpleApp-SimpleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp-SimpleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleApp-SimpleAppTests/Pods-SimpleApp-SimpleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C6B9822D902516D55191323 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		5D2203721BA0F81EA729C85B /* Pods-SimpleApp-SimpleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp-SimpleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleApp-SimpleAppUITests/Pods-SimpleApp-SimpleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E33567FEA6EB91D9A519F58 /* Pods-SimpleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleAppTests/Pods-SimpleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99EA354CCD268B7AA6F56DD9 /* Pods-SimpleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleAppTests/Pods-SimpleAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		BA970D4A235A9553004C97B8 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		BA970D4D235A9781004C97B8 /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		BAA7DBB5235A904100FD14E2 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
+		B7290FF1638EE82122B9BAAB /* Pods_SimpleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA03658C235E185800D9F487 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		BA036591235E189F00D9F487 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		BA036595235E18AF00D9F487 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
+		BA03659B235E3F4200D9F487 /* credentials-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "credentials-2.plist"; sourceTree = "<group>"; };
+		BA0365A02360319800D9F487 /* sculogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sculogo.png; sourceTree = "<group>"; };
+		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71C54862356686B0055AE3F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E784C771234E9B2800BC32F4 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E784C774234E9B2800BC32F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E784C779234E9B2800BC32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E784C77B234E9B3000BC32F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E784C77E234E9B3000BC32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E784C780234E9B3000BC32F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E784C785234E9B3100BC32F4 /* SimpleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +79,7 @@
 		E784C790234E9B3100BC32F4 /* SimpleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E784C796234E9B3100BC32F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E784C7A2234E9CD600BC32F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E890D6EE46E84490B6007B6C /* Pods-SimpleApp-SimpleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp-SimpleAppTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleApp-SimpleAppTests/Pods-SimpleApp-SimpleAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD57BD0ED543E6EA7265D7EB /* Pods_SimpleApp_SimpleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp_SimpleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA036590235E188100D9F487 /* GoogleSignIn.bundle in Frameworks */,
+				BA036592235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */,
+				BA036596235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */,
 				D7081ED8558260AA867B59A5 /* Pods_SimpleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E2E328A32C49954996AD78 /* Pods_SimpleAppTests.framework in Frameworks */,
+				BA036597235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */,
+				7CD85A86A00AC8BAFB99FFDE /* Pods_SimpleAppTests.framework in Frameworks */,
+				BA036593235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA036598235E18AF00D9F487 /* GoogleSignInDependencies.framework in Frameworks */,
 				7AF1D7495DCF9B3ED2825C70 /* Pods_SimpleApp_SimpleAppUITests.framework in Frameworks */,
+				BA036594235E189F00D9F487 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */,
+				BA036595235E18AF00D9F487 /* GoogleSignInDependencies.framework */,
+				BA036591235E189F00D9F487 /* GoogleSignIn.framework */,
 				FD57BD0ED543E6EA7265D7EB /* Pods_SimpleApp_SimpleAppUITests.framework */,
-				1A54033EBDBFE46F7CCD7C1E /* Pods_SimpleAppTests.framework */,
+				BA03658C235E185800D9F487 /* GoogleSignIn.bundle */,
+				B7290FF1638EE82122B9BAAB /* Pods_SimpleAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,14 +140,24 @@
 				5D2203721BA0F81EA729C85B /* Pods-SimpleApp-SimpleAppUITests.release.xcconfig */,
 				5E33567FEA6EB91D9A519F58 /* Pods-SimpleAppTests.debug.xcconfig */,
 				99EA354CCD268B7AA6F56DD9 /* Pods-SimpleAppTests.release.xcconfig */,
+				3AFCF2D7BBFA44588E0BC837 /* Pods-SimpleApp-SimpleAppTests.debug.xcconfig */,
+				E890D6EE46E84490B6007B6C /* Pods-SimpleApp-SimpleAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA03659F2360318400D9F487 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BA0365A02360319800D9F487 /* sculogo.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */ = {
 			isa = PBXGroup;
 			children = (
-				BA970D4A235A9553004C97B8 /* credentials.plist */,
+				BA03659B235E3F4200D9F487 /* credentials-2.plist */,
 			);
 			path = GoogleSignInCocoaPods;
 			sourceTree = "<group>";
@@ -153,13 +190,13 @@
 				E784C774234E9B2800BC32F4 /* AppDelegate.swift */,
 				E784C778234E9B2800BC32F4 /* Main.storyboard */,
 				E71C54862356686B0055AE3F /* RatingControl.swift */,
-				E784C77B234E9B3000BC32F4 /* Assets.xcassets */,
+				BA03659F2360318400D9F487 /* Images */,
 				E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
 				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
-				BAA7DBB5235A904100FD14E2 /* GoogleSignInViewController.swift */,
+				BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */,
+				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
 				BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */,
-				BA970D4D235A9781004C97B8 /* SimpleApp-Bridging-Header.h */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -210,8 +247,8 @@
 				E784C781234E9B3100BC32F4 /* Sources */,
 				E784C782234E9B3100BC32F4 /* Frameworks */,
 				E784C783234E9B3100BC32F4 /* Resources */,
-				44DC6D76194E12EF9B4ABB58 /* [CP] Embed Pods Frameworks */,
-				B95A2E2D53D8B2D82B559E5B /* [CP] Copy Pods Resources */,
+				64D524BC00ED2C7A794AC7A3 /* [CP] Embed Pods Frameworks */,
+				BD942D52D702BEEB28ED4DA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,6 +315,47 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				he,
+				ar,
+				el,
+				ja,
+				uk,
+				es_MX,
+				"es-MX",
+				zh_CN,
+				"zh-Hans",
+				nb,
+				es,
+				pt_BR,
+				"pt-BR",
+				da,
+				it,
+				sk,
+				pt_PT,
+				"pt-PT",
+				ms,
+				sv,
+				cs,
+				ko,
+				hu,
+				tr,
+				pl,
+				zh_TW,
+				"zh-Hant",
+				en_GB,
+				"en-GB",
+				vi,
+				ru,
+				fr,
+				fi,
+				id,
+				nl,
+				th,
+				pt,
+				ro,
+				hr,
+				ca,
 			);
 			mainGroup = E784C768234E9B2700BC32F4;
 			productRefGroup = E784C772234E9B2800BC32F4 /* Products */;
@@ -296,9 +374,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA03658D235E185900D9F487 /* GoogleSignIn.bundle in Resources */,
+				BA0365A12360319800D9F487 /* sculogo.png in Resources */,
 				E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */,
-				BA970D4B235A9553004C97B8 /* credentials.plist in Resources */,
-				E784C77C234E9B3000BC32F4 /* Assets.xcassets in Resources */,
+				BA03659C235E3F4200D9F487 /* credentials-2.plist in Resources */,
 				E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +386,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA03659D235E3F4200D9F487 /* credentials-2.plist in Resources */,
+				BA03658E235E185900D9F487 /* GoogleSignIn.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +395,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA03659E235E3F4200D9F487 /* credentials-2.plist in Resources */,
+				BA03658F235E185900D9F487 /* GoogleSignIn.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +425,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		44DC6D76194E12EF9B4ABB58 /* [CP] Embed Pods Frameworks */ = {
+		64D524BC00ED2C7A794AC7A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,7 +486,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B95A2E2D53D8B2D82B559E5B /* [CP] Copy Pods Resources */ = {
+		BD942D52D702BEEB28ED4DA2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -429,7 +512,7 @@
 			files = (
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
 				E71C54872356686B0055AE3F /* RatingControl.swift in Sources */,
-				BAA7DBB6235A904100FD14E2 /* GoogleSignInViewController.swift in Sources */,
+				BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */,
 				E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +604,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -535,6 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -582,6 +667,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -590,6 +676,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -604,21 +691,26 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22AC58ADC69475276209E17E /* Pods-SimpleApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Pods/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = SimpleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "CSCI-187.SimpleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/SimpleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 			};
 			name = Debug;
 		};
@@ -626,20 +718,25 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C6B9822D902516D55191323 /* Pods-SimpleApp.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Pods/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = SimpleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "CSCI-187.SimpleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/SimpleApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 			};
 			name = Release;
 		};
@@ -650,6 +747,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -671,6 +772,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,6 +796,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,6 +820,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
