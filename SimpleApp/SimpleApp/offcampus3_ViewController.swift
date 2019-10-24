@@ -8,7 +8,16 @@
 
 import UIKit
 
-class offcampus3_ViewController: UIViewController {
+class offcampus3_ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +42,8 @@ class offcampus3_ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func wakeuptimePicker(_ sender: UIDatePicker) {
+        datePicker.	datePickerMode = UIDatePicker.Mode.Time
+    }
+    
 }

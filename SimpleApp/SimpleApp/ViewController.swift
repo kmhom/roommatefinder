@@ -60,8 +60,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         ]
         print(basicInfoJSON)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    @IBAction func uploadprofilePicture(_ sender: Any) {
     }
     
     

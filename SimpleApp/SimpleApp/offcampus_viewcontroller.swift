@@ -8,20 +8,16 @@
 
 import UIKit
 
-class offcampus_viewcontroller: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class offcampus_viewcontroller: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource, UITableViewController{
     
-
-   
-    @IBOutlet weak var housingPickerField: UIPickerView!
     @IBOutlet weak var carPickerField: UIPickerView!
     @IBOutlet weak var accomodationPickerField: UIPickerView!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     @IBAction func budgetSliderField(_ sender: Any) {
     }
@@ -32,9 +28,37 @@ class offcampus_viewcontroller: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
     }
     
-    @IBAction func bedtimeSliderField(_ sender: Any) {
+    @IBAction func bedtimePicker(_ sender: Any) {
     }
     
+    //ignore this stuff, I was trying to get the PickerView working
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+           return housingdataSource[row]
+    }
+       
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return housingdataSource.count
+    }
+    
+    
+    
+    //MARK: Housing Question Table View/Cells
+     private let housingdataSource = ["Apartment", "House", "Townhouse", "Condo"]
+    @IBOutlet weak var housingTable: UITableView!
+    @IBOutlet weak var apartmentCell: UITableViewCell!
+    @IBOutlet weak var townhouseCell: UITableViewCell!
+    @IBOutlet weak var houseCell: UITableViewCell!
+    @IBOutlet weak var condoCell: UITableViewCell!
+    
+    
+    
+   
+    
+
     /*
     // MARK: - Navigation
 
