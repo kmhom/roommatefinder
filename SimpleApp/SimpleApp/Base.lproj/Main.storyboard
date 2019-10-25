@@ -11,10 +11,9 @@
         <!--Google Sign In View Controller-->
         <scene sceneID="XV7-TC-2fS">
             <objects>
-                <viewController id="2HA-EW-rHv" customClass="GoogleSignInViewController" customModule="SimpleApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1EJ-zr-bxF">
+                <viewController storyboardIdentifier="GoogleSignInViewController" id="2HA-EW-rHv" customClass="GoogleSignInViewController" customModule="SimpleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1EJ-zr-bxF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpk-MH-1ti">
                                 <rect key="frame" x="98" y="550" width="219" height="36"/>
@@ -40,10 +39,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sculogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="vUI-nA-fEi">
-                                <rect key="frame" x="79" y="205" width="248" height="163"/>
+                                <rect key="frame" x="79" y="161" width="248" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="1ha-ur-xtU"/>
-                                    <constraint firstAttribute="height" constant="163" id="brq-XS-vtF"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rf9-GW-yDO">
@@ -55,7 +53,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15598023567416258" green="0.19060056423590488" blue="0.25949238989637302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4d4-uj-9hS" firstAttribute="centerX" secondItem="1EJ-zr-bxF" secondAttribute="centerX" id="1si-jQ-wdy"/>
                             <constraint firstItem="vUI-nA-fEi" firstAttribute="leading" secondItem="7FZ-F5-YwI" secondAttribute="leading" constant="79" id="4V0-GR-qgE"/>
@@ -87,7 +85,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasicProfileViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,11 +177,24 @@
                                     <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5gO-6D-EMR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYO-jN-G9U">
+                                <rect key="frame" x="20" y="51" width="20" height="22"/>
+                                <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" backgroundImage="gear" catalog="system"/>
+                                <connections>
+                                    <action selector="settingsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAD-Hk-rpN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                         </accessibility>
+                        <constraints>
+                            <constraint firstItem="JYO-jN-G9U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Jof-uw-ZxC"/>
+                            <constraint firstItem="JYO-jN-G9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gI0-xC-nyK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JYO-jN-G9U" secondAttribute="trailing" constant="374" id="x96-62-bpb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -195,7 +206,9 @@
                         <outlet property="majorTextField" destination="5bI-kc-HhJ" id="K4y-qS-TFc"/>
                         <outlet property="nameTextField" destination="wAw-IE-z1K" id="bGv-V6-Ejr"/>
                         <outlet property="nextButton" destination="B2o-Yf-aFY" id="oXC-Gq-hL0"/>
+                        <outlet property="settingsButton" destination="JYO-jN-G9U" id="WxB-E1-Qgk"/>
                         <outlet property="yearTextField" destination="kMS-8S-GcO" id="Soo-K5-BqU"/>
+                        <segue destination="2HA-EW-rHv" kind="presentation" identifier="backToSignIn" id="3vD-dS-uAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -205,6 +218,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="google.png" width="18" height="18"/>
         <image name="sculogo.png" width="93.120002746582031" height="111.12000274658203"/>
     </resources>

@@ -20,10 +20,6 @@ class GoogleSignInViewController: UIViewController{
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        if(GIDSignIn.sharedInstance()?.currentUser != nil){ //if user is signed in, don't show this screen
-            let basicProfileVC = ViewController()
-            self.present(basicProfileVC, animated: true, completion: print("User is signed in, later send access token through app delegate"))
-        }
     }
 
 }

@@ -7,12 +7,34 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ViewController: UIViewController{
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     //MARK: Properties
     
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBAction func settingsAction(_ sender: Any) {
+        let signOutAlert = UIAlertController(title: "Would you like to signout?", message: nil, preferredStyle: .alert)
+        signOutAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler:
+            {
+                action in
+                print("Yes clicked")
+                GIDSignIn.sharedInstance()?.signOut()
+                let signInSegue = UIStoryboardSegue(identifier: "backToSignIn", source: self, destination: GoogleSignInViewController())
+                self.performSegue(withIdentifier: "backToSignIn", sender: self)
+                
+                
+        }))
+        signOutAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {action in print("No clicked")}))
+        
+        self.present(signOutAlert, animated: true)
+        return
+    }
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -52,9 +74,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         ]
         print(basicInfoJSON)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     
 }

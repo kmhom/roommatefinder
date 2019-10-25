@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = "338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k.apps.googleusercontent.com"
 //        GIDSignin.sharedInstance()?.clientID = "com.googleusercontent.apps.338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k"
         GIDSignIn.sharedInstance()?.delegate = self
+        if(GIDSignIn.sharedInstance().hasPreviousSignIn()){ //if user is signed in, don't show start screen
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
+                window?.rootViewController = basicProfileVC
+                self.window?.makeKeyAndVisible()
+                
+            }
+        }
         return true
     }
     
@@ -43,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let familyName = user.profile.familyName
         let email = user.profile.email
         NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"),object:nil, userInfo: ["statusText": "Signed in user: \n\(fullName!)"])
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
+            window?.rootViewController = basicProfileVC
+            self.window?.makeKeyAndVisible()
+        }
     }
     
     //disconnect handler
