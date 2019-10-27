@@ -24,6 +24,7 @@
 		BA03659D235E3F4200D9F487 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA03659B235E3F4200D9F487 /* credentials-2.plist */; };
 		BA03659E235E3F4200D9F487 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA03659B235E3F4200D9F487 /* credentials-2.plist */; };
 		BA0365A12360319800D9F487 /* sculogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0365A02360319800D9F487 /* sculogo.png */; };
+		BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */; };
 		D7081ED8558260AA867B59A5 /* Pods_SimpleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */; };
 		E71C54872356686B0055AE3F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C54862356686B0055AE3F /* RatingControl.swift */; };
 		E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C774234E9B2800BC32F4 /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 		BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		BA03659B235E3F4200D9F487 /* credentials-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "credentials-2.plist"; sourceTree = "<group>"; };
 		BA0365A02360319800D9F487 /* sculogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sculogo.png; sourceTree = "<group>"; };
+		BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusAboutMeViewController.swift; sourceTree = "<group>"; };
 		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71C54862356686B0055AE3F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -195,6 +197,7 @@
 				E784C780234E9B3000BC32F4 /* Info.plist */,
 				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
 				BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */,
+				BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */,
 				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
 				BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */,
 			);
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */,
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
 				E71C54872356686B0055AE3F /* RatingControl.swift in Sources */,
 				BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */,
