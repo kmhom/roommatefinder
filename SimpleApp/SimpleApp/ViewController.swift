@@ -11,9 +11,14 @@ import GoogleSignIn
 
 class ViewController: UIViewController{
     
+    //protocol member
+    var jsonPassedThroughViews: [String : Any] = [:]
+//    var basicInfoJSON: [String: Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
     
     //MARK: Properties
     
@@ -24,11 +29,13 @@ class ViewController: UIViewController{
             {
                 action in
                 print("Yes clicked")
-                GIDSignIn.sharedInstance()?.signOut()
-                let signInSegue = UIStoryboardSegue(identifier: "backToSignIn", source: self, destination: GoogleSignInViewController())
+        
+        GIDSignIn.sharedInstance()?.signOut()
                 self.performSegue(withIdentifier: "backToSignIn", sender: self)
                 
                 
+                
+       
         }))
         signOutAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {action in print("No clicked")}))
         
@@ -65,14 +72,15 @@ class ViewController: UIViewController{
             return
         }
         
-        let basicInfoJSON:[String: Any] = [
+        jsonPassedThroughViews = [
             "Name": nameText,
             "Age": ageText,
             "Gender": genderText,
             "Major": majorText,
             "Year": yearText
         ]
-        print(basicInfoJSON)
+        print(jsonPassedThroughViews)
+        
     }
     
 }

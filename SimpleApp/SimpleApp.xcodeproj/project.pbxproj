@@ -26,6 +26,8 @@
 		BA0365A12360319800D9F487 /* sculogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0365A02360319800D9F487 /* sculogo.png */; };
 		BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */; };
 		BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */; };
+		BA79E749237341C00067055D /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E748237341C00067055D /* AppProtocols.swift */; };
+		BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9718A23714AE000FEF558 /* JSONObject.swift */; };
 		D7081ED8558260AA867B59A5 /* Pods_SimpleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */; };
 		E71C54872356686B0055AE3F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C54862356686B0055AE3F /* RatingControl.swift */; };
 		E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C774234E9B2800BC32F4 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusAboutMeViewController.swift; sourceTree = "<group>"; };
 		BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffCampusViewController.swift; sourceTree = "<group>"; };
 		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA79E748237341C00067055D /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
+		BAE9718A23714AE000FEF558 /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71C54862356686B0055AE3F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E784C771234E9B2800BC32F4 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +170,15 @@
 			path = GoogleSignInCocoaPods;
 			sourceTree = "<group>";
 		};
+		BAE9718C23714C8900FEF558 /* Swift files */ = {
+			isa = PBXGroup;
+			children = (
+				BAE9718A23714AE000FEF558 /* JSONObject.swift */,
+				BA79E748237341C00067055D /* AppProtocols.swift */,
+			);
+			path = "Swift files";
+			sourceTree = "<group>";
+		};
 		E784C768234E9B2700BC32F4 = {
 			isa = PBXGroup;
 			children = (
@@ -196,9 +209,10 @@
 				E71C54862356686B0055AE3F /* RatingControl.swift */,
 				BA03659F2360318400D9F487 /* Images */,
 				E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */,
+				BAE9718C23714C8900FEF558 /* Swift files */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
-				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
 				BA036599235E1C8E00D9F487 /* GoogleSignInViewController.swift */,
+				E784C7A2234E9CD600BC32F4 /* ViewController.swift */,
 				BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */,
 				BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */,
 				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
@@ -519,9 +533,11 @@
 				BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */,
 				BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */,
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
+				BA79E749237341C00067055D /* AppProtocols.swift in Sources */,
 				E71C54872356686B0055AE3F /* RatingControl.swift in Sources */,
 				BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */,
 				E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */,
+				BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

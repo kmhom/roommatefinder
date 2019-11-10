@@ -21,15 +21,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = "338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k.apps.googleusercontent.com"
 //        GIDSignin.sharedInstance()?.clientID = "com.googleusercontent.apps.338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k"
         GIDSignIn.sharedInstance()?.delegate = self
-        if(GIDSignIn.sharedInstance().hasPreviousSignIn()){ //if user is signed in, don't show start screen
+        //if(GIDSignIn.sharedInstance().hasPreviousSignIn()){ //if user is signed in, don't show start screen
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
+//
+//                window?.rootViewController = basicProfileVC
+//                self.window?.makeKeyAndVisible()
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
-                window?.rootViewController = basicProfileVC
-                self.window?.makeKeyAndVisible()
+            if let signInVC = sb.instantiateViewController(withIdentifier: "GoogleSignInViewController") as? UIViewController{
                 
-            }
-        }
+                window?.rootViewController = signInVC
+            self.window?.makeKeyAndVisible()
+//        if(GIDSignIn.sharedInstance().hasPreviousSignIn()){
+//                let rootViewController = self.window!.rootViewController as! UINavigationController
+//                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let profileViewController = mainStoryboard.instantiateViewController(withIdentifier: "BasicProfileViewController") as! ViewController
+//                rootViewController.pushViewController(profileViewController, animated: true)
+                    
+            //}
+                
+            //}
+        //}
         return true
+        }
     }
     
     //sign in handler/ connect handler
