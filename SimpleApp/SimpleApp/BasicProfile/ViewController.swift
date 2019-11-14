@@ -80,7 +80,11 @@ class ViewController: UIViewController{
             "Year": yearText
         ]
         print(jsonPassedThroughViews)
+        let onCampusVC = self.storyboard?.instantiateViewController(withIdentifier: "OnCampusVC")
         
+        onCampusVC?.modalPresentationStyle = .fullScreen
+        if(onCampusVC != nil){
+             present(onCampusVC!, animated:true)
+        }
     }
-    
 }

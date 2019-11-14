@@ -12,7 +12,7 @@ import UIKit
 
 class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var jsonFromPreviousPage: [String : Any] = [:]
+    lazy var jsonFromPreviousPage: [String : Any] = [:]
     
     
     
@@ -45,15 +45,15 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
         super.viewDidLoad()
         print(self.jsonFromPreviousPage)
         
-        self.dormPicker.delegate = self
-        self.roomTypePicker.delegate = self
-        self.dormPicker.dataSource = self
-        self.roomTypePicker.dataSource = self
+        dormPicker?.delegate = self
+        roomTypePicker?.delegate = self
+        dormPicker?.dataSource = self
+        roomTypePicker?.dataSource = self
         dormPickerData = ["Graham Hall", "Campisi Hall","Finn Hall", "Swig Hall", "Casa Italiana", "Sobrato Hall", "Dunne Hall", "McLaughlin-Walsh Hall", "Sanfilippo Hall"]
         roomTypePickerData = ["Single", "Double", "Suite"]
        
-        self.hobbiesTextView.layer.borderWidth = 1
-    self.hobbiesTextView.layer.borderColor = UIColor.gray.cgColor
+        self.hobbiesTextView?.layer.borderWidth = 1
+    self.hobbiesTextView?.layer.borderColor = UIColor.gray.cgColor
     }
     @IBAction func bedTimePickerChanged(_ sender: UIDatePicker) {
         let timeFormatter = DateFormatter()
@@ -70,14 +70,11 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
     
     @IBAction func submitActionClicked(_ sender: Any) {
         //ensure no ui element is nil
-        guard let finalDormSelection = dormPickerSelection
-            else {return}
-        guard let finalRoomTypeSelection = roomTypePickerSelection
-            else {return}
-        guard let finalBedTime = bedTime
-            else {return}
-        guard let  finalWakeupTime = wakeupTime
-            else {return}
+         let finalDormSelection = dormPickerSelection
+         let finalRoomTypeSelection = roomTypePickerSelection
+         let finalBedTime = bedTime
+         let  finalWakeupTime = wakeupTime
+            
         guard let finalGuestOrNotValue = guestSegmentedControl.titleForSegment(at: guestSegmentedControl.selectedSegmentIndex)
             else {return}
         //slider values are guaranteed to never be nil
@@ -101,9 +98,13 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
             "Hobbies":finalHobbies
         ]
         print("previous page json")
-        print(jsonFromPreviousPage)
         jsonFromPreviousPage += onCampusJSON
         print(jsonFromPreviousPage)
+        
+        let aboutRoommateVC = self.storyboard?.instantiateViewController(withIdentifier:"OnCampusAboutRoommate")
+        aboutRoommateVC?.modalPresentationStyle = .fullScreen
+        
+        
         
         
     }
@@ -146,6 +147,13 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
         }
         else{
             return
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toOnCampusRoommate" {
+            if let onCampusVC = segue.destination as? OnCampusRoommateViewController {
+                
+            }
         }
     }
     
