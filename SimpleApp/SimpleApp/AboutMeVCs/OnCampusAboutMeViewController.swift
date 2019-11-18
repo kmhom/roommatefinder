@@ -10,7 +10,8 @@ import UIKit
 
 
 
-class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+    
     
     lazy var jsonFromPreviousPage: [String : Any] = [:]
     
@@ -40,17 +41,25 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
     var roomTypePickerSelection:String!
     var bedTime:String!
     var wakeupTime:String!
-    let basicInfoObject = ViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.jsonFromPreviousPage)
-        
         dormPicker?.delegate = self
         roomTypePicker?.delegate = self
         dormPicker?.dataSource = self
         roomTypePicker?.dataSource = self
         dormPickerData = ["Graham Hall", "Campisi Hall","Finn Hall", "Swig Hall", "Casa Italiana", "Sobrato Hall", "Dunne Hall", "McLaughlin-Walsh Hall", "Sanfilippo Hall"]
         roomTypePickerData = ["Single", "Double", "Suite"]
+        dormPickerSelection = dormPickerData[0]
+        roomTypePickerSelection  = roomTypePickerData[0]
+       let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let yourDate = formatter.date(from: "00:00")
+        wakeupTimePicker.setDate(yourDate!, animated: false)
+        bedTimePicker.setDate(yourDate!, animated: false)
+        formatter.dateFormat = "HH:mm"
+        wakeupTime = formatter.string(from: yourDate!)
+        bedTime = formatter.string(from: yourDate!)
+        
        
         self.hobbiesTextView?.layer.borderWidth = 1
     self.hobbiesTextView?.layer.borderColor = UIColor.gray.cgColor
@@ -72,8 +81,8 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
         //ensure no ui element is nil
          let finalDormSelection = dormPickerSelection
          let finalRoomTypeSelection = roomTypePickerSelection
-         let finalBedTime = bedTime
-         let  finalWakeupTime = wakeupTime
+        let finalBedTime = self.bedTime
+        let  finalWakeupTime = self.wakeupTime
             
         guard let finalGuestOrNotValue = guestSegmentedControl.titleForSegment(at: guestSegmentedControl.selectedSegmentIndex)
             else {return}
@@ -86,10 +95,10 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
             else {return}
         
         let onCampusJSON:[String:Any] = [
-            "Dorm": finalDormSelection,
-            "RoomType": finalRoomTypeSelection,
-            "BedTime": finalBedTime,
-            "WakeUpTime": finalWakeupTime,
+            "Dorm": finalDormSelection!,
+            "RoomType": finalRoomTypeSelection!,
+            "BedTime": finalBedTime!,
+            "WakeUpTime": finalWakeupTime!,
             "Guests":finalGuestOrNotValue,
             "Outgoing":finalOutgoingOrNot,
             "Belongings":finalBelongingsOrNot,
@@ -98,18 +107,16 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
             "Hobbies":finalHobbies
         ]
         print("previous page json")
-        jsonFromPreviousPage += onCampusJSON
+        self.jsonFromPreviousPage += onCampusJSON
+        //should contain everything
         print(jsonFromPreviousPage)
         
-        let aboutRoommateVC = self.storyboard?.instantiateViewController(withIdentifier:"OnCampusAboutRoommate")
-        aboutRoommateVC?.modalPresentationStyle = .fullScreen
+        let aboutRoommateVC = self.storyboard?.instantiateViewController(withIdentifier:"OnCampusAboutRoommate") as! OnCampusRoommateViewController
+        aboutRoommateVC.jsonFromPreviousPage = self.jsonFromPreviousPage
+        aboutRoommateVC.modalPresentationStyle = .fullScreen
         
-        
-        
-        
+        present(aboutRoommateVC, animated:true)
     }
-    
-    
     //PROTOCOL STUBS FOR PICKERVIEW
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -149,14 +156,4 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
             return
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toOnCampusRoommate" {
-            if let onCampusVC = segue.destination as? OnCampusRoommateViewController {
-                
-            }
-        }
-    }
-    
-
-    
 }

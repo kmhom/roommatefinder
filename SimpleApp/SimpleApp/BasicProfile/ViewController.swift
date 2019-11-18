@@ -13,6 +13,7 @@ class ViewController: UIViewController{
     
     //protocol member
     var jsonPassedThroughViews: [String : Any] = [:]
+    var jsonDelegate: JSONTransferDelegateProtocol? = nil
 //    var basicInfoJSON: [String: Any] = [:]
     
     override func viewDidLoad() {
@@ -80,11 +81,11 @@ class ViewController: UIViewController{
             "Year": yearText
         ]
         print(jsonPassedThroughViews)
-        let onCampusVC = self.storyboard?.instantiateViewController(withIdentifier: "OnCampusVC")
+        let onCampusVC = self.storyboard?.instantiateViewController(withIdentifier: "OnCampusVC") as! OnCampusAboutMeViewController
+        onCampusVC.modalPresentationStyle = .fullScreen
+        onCampusVC.jsonFromPreviousPage = jsonPassedThroughViews
         
-        onCampusVC?.modalPresentationStyle = .fullScreen
-        if(onCampusVC != nil){
-             present(onCampusVC!, animated:true)
-        }
+        present(onCampusVC, animated:true)
+        
     }
 }

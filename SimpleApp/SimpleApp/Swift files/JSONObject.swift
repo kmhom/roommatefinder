@@ -9,14 +9,26 @@
 import Foundation
 
 struct JSONObject: Codable{
-    let dormChoice: String //1
-    let roomType: String //2
-    let bedTime: String //3
-    let wakeupTime: String //4
-    let inviteGuests: String //5
-    let outgoingness: Int //6, slider value
-    let shareBelongings: Int //7
-    let neatness: Int //8
-    let noisiness: Int //9
-    let hobbies: String //10
+    let name: String
+    let age: String
+    let gender: String
+    let major: String
+    let year: String
+    let dormChoice: String
+    let roomType: String
+    let bedTime: String
+    let wakeupTime: String
+    let inviteGuests: String
+    let outgoingness: Int
+    let shareBelongings: Int
+    let neatness: Int
+    let noisiness: Int
+    let hobbies: String
+    let roommateBedTime: String
+    let rommateWakeUpTime: String
+    let roommateInviteGuests: String
+    let roommateOutgoingness: Int
+    let roommateShareBelongings: Int
+    let roommateNeatness: Int
+    let roommateNoisiness: Int
 }

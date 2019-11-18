@@ -8,10 +8,8 @@
 
 import Foundation
 
-protocol basicInfoDelegate{
-    var jsonPassedToDelegate: [String: Any] { get set }
-
-    func sendJSONToOnOrOffCampusVC(withParameter JSONObject:[String:Any])
+protocol JSONTransferDelegateProtocol{
+    func sendDataToViewController(myJSONData:[String:Any])
 }
 
 //overload += for dictionary

@@ -311,6 +311,9 @@
                                                     <constraint firstAttribute="height" constant="216" id="Haq-Uv-lhL"/>
                                                     <constraint firstAttribute="width" constant="414" id="O9T-mo-Qif"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="bedTimePickerChanged:" destination="KbI-MZ-tp5" eventType="valueChanged" id="84U-2y-zvs"/>
+                                                </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. What time do you want your roommate to go to bed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-BI-y3r">
                                                 <rect key="frame" x="0.0" y="286" width="406" height="75"/>
@@ -406,6 +409,9 @@
                                                     <constraint firstAttribute="width" constant="414" id="jp0-dn-7ru"/>
                                                     <constraint firstAttribute="height" constant="216" id="kQ7-FI-MaC"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="wakeupPickerChanged:" destination="KbI-MZ-tp5" eventType="valueChanged" id="Xzx-RQ-BTu"/>
+                                                </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Do you want them to be introverted or extroverted?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-Fq-Vqf">
                                                 <rect key="frame" x="12" y="1149.5" width="411" height="19.5"/>
@@ -480,6 +486,7 @@
                                             <constraint firstItem="8pe-tI-NeC" firstAttribute="top" secondItem="SSM-5D-Cab" secondAttribute="bottom" constant="8" id="e9h-oK-Z36"/>
                                             <constraint firstItem="ldH-TU-rVq" firstAttribute="leading" secondItem="iiV-Qq-0fb" secondAttribute="leading" constant="12" id="eMV-ZA-cq9"/>
                                             <constraint firstItem="S1W-gP-sse" firstAttribute="top" secondItem="TP0-vx-Bsy" secondAttribute="bottom" constant="24" id="fmR-vV-Hfr"/>
+                                            <constraint firstAttribute="bottom" secondItem="lST-16-ALS" secondAttribute="bottom" constant="168" id="g3g-MG-hPN"/>
                                             <constraint firstItem="W8T-qu-Hht" firstAttribute="centerY" secondItem="RD9-iv-sf7" secondAttribute="centerY" id="gI9-lH-q4M"/>
                                             <constraint firstItem="TfS-Fg-Bto" firstAttribute="top" secondItem="RD9-iv-sf7" secondAttribute="bottom" constant="3" id="guU-eJ-Fd8"/>
                                             <constraint firstItem="8pe-tI-NeC" firstAttribute="top" secondItem="5T3-Il-jqC" secondAttribute="bottom" constant="8" id="gxY-m0-0vi"/>
@@ -538,6 +545,7 @@
                     <navigationItem key="navigationItem" id="07S-kQ-byC"/>
                     <size key="freeformSize" width="414" height="2100"/>
                     <connections>
+                        <outlet property="belongingsSlider" destination="lke-Oe-NjF" id="lkF-3j-iE0"/>
                         <outlet property="guestsSegmentedControl" destination="S1W-gP-sse" id="MCl-VZ-n9N"/>
                         <outlet property="introOrExtroSlider" destination="TfS-Fg-Bto" id="z2c-fK-Qmp"/>
                         <outlet property="neatnessSlider" destination="u64-zi-v8z" id="OdY-82-QWl"/>
