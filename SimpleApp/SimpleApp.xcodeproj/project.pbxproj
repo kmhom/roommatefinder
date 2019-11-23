@@ -26,11 +26,15 @@
 		BA0365A12360319800D9F487 /* sculogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0365A02360319800D9F487 /* sculogo.png */; };
 		BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */; };
 		BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */; };
+		BA2986442383205C001DFB77 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2986432383205C001DFB77 /* ClassExtensions.swift */; };
+		BA298651238672D3001DFB77 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864D238672D3001DFB77 /* RatingControl.swift */; };
+		BA298652238672D3001DFB77 /* displayUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864E238672D3001DFB77 /* displayUsers.swift */; };
+		BA298653238672D3001DFB77 /* scrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864F238672D3001DFB77 /* scrollController.swift */; };
+		BA298654238672D3001DFB77 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298650238672D3001DFB77 /* userProfile.swift */; };
 		BA79E749237341C00067055D /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E748237341C00067055D /* AppProtocols.swift */; };
 		BA79E750237AB48A0067055D /* OnCampusRoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */; };
 		BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9718A23714AE000FEF558 /* JSONObject.swift */; };
 		D7081ED8558260AA867B59A5 /* Pods_SimpleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */; };
-		E71C54872356686B0055AE3F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C54862356686B0055AE3F /* RatingControl.swift */; };
 		E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C774234E9B2800BC32F4 /* AppDelegate.swift */; };
 		E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E784C778234E9B2800BC32F4 /* Main.storyboard */; };
 		E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */; };
@@ -72,12 +76,16 @@
 		BA0365A02360319800D9F487 /* sculogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sculogo.png; sourceTree = "<group>"; };
 		BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusAboutMeViewController.swift; sourceTree = "<group>"; };
 		BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffCampusViewController.swift; sourceTree = "<group>"; };
+		BA2986432383205C001DFB77 /* ClassExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
+		BA29864D238672D3001DFB77 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = ../../../../Downloads/roommatefinder/SimpleApp/SimpleApp/RatingControl.swift; sourceTree = "<group>"; };
+		BA29864E238672D3001DFB77 /* displayUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayUsers.swift; sourceTree = "<group>"; };
+		BA29864F238672D3001DFB77 /* scrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollController.swift; sourceTree = "<group>"; };
+		BA298650238672D3001DFB77 /* userProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA79E748237341C00067055D /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 		BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusRoommateViewController.swift; sourceTree = "<group>"; };
 		BAE9718A23714AE000FEF558 /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		C9D4F564F0B36448CEC9B4FF /* Pods_SimpleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71C54862356686B0055AE3F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E784C771234E9B2800BC32F4 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E784C774234E9B2800BC32F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E784C779234E9B2800BC32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +218,7 @@
 			children = (
 				BAE9718A23714AE000FEF558 /* JSONObject.swift */,
 				BA79E748237341C00067055D /* AppProtocols.swift */,
+				BA2986432383205C001DFB77 /* ClassExtensions.swift */,
 			);
 			path = "Swift files";
 			sourceTree = "<group>";
@@ -241,7 +250,6 @@
 			children = (
 				E784C774234E9B2800BC32F4 /* AppDelegate.swift */,
 				E784C778234E9B2800BC32F4 /* Main.storyboard */,
-				E71C54862356686B0055AE3F /* RatingControl.swift */,
 				BA03659F2360318400D9F487 /* Images */,
 				E784C77D234E9B3000BC32F4 /* LaunchScreen.storyboard */,
 				BAE9718C23714C8900FEF558 /* Swift files */,
@@ -249,6 +257,10 @@
 				BA79E74C237AB39E0067055D /* BasicProfile */,
 				BA79E74A237AB33C0067055D /* AboutMeVCs */,
 				BA79E74E237AB44D0067055D /* AboutRoommateVCs */,
+				BA29864D238672D3001DFB77 /* RatingControl.swift */,
+				BA29864F238672D3001DFB77 /* scrollController.swift */,
+				BA29864E238672D3001DFB77 /* displayUsers.swift */,
+				BA298650238672D3001DFB77 /* userProfile.swift */,
 				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
 				BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */,
@@ -565,12 +577,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2986442383205C001DFB77 /* ClassExtensions.swift in Sources */,
+				BA298652238672D3001DFB77 /* displayUsers.swift in Sources */,
+				BA298653238672D3001DFB77 /* scrollController.swift in Sources */,
+				BA298651238672D3001DFB77 /* RatingControl.swift in Sources */,
+				BA298654238672D3001DFB77 /* userProfile.swift in Sources */,
 				BA79E750237AB48A0067055D /* OnCampusRoommateViewController.swift in Sources */,
 				BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */,
 				BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */,
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
 				BA79E749237341C00067055D /* AppProtocols.swift in Sources */,
-				E71C54872356686B0055AE3F /* RatingControl.swift in Sources */,
 				BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */,
 				E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */,
 				BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */,

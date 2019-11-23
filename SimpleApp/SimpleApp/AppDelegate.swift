@@ -21,27 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = "338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k.apps.googleusercontent.com"
 //        GIDSignin.sharedInstance()?.clientID = "com.googleusercontent.apps.338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k"
         GIDSignIn.sharedInstance()?.delegate = self
-        //if(GIDSignIn.sharedInstance().hasPreviousSignIn()){ //if user is signed in, don't show start screen
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
-//
-//                window?.rootViewController = basicProfileVC
-//                self.window?.makeKeyAndVisible()
+        
             let sb = UIStoryboard(name: "Main", bundle: nil)
             if let signInVC = sb.instantiateViewController(withIdentifier: "GoogleSignInViewController") as? UIViewController{
                 
                 window?.rootViewController = signInVC
             self.window?.makeKeyAndVisible()
-//        if(GIDSignIn.sharedInstance().hasPreviousSignIn()){
-//                let rootViewController = self.window!.rootViewController as! UINavigationController
-//                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let profileViewController = mainStoryboard.instantiateViewController(withIdentifier: "BasicProfileViewController") as! ViewController
-//                rootViewController.pushViewController(profileViewController, animated: true)
-                    
-            //}
-                
-            //}
-        //}
+            GIDSignIn.sharedInstance()?.serverClientID = "SERVER_CLIENT_ID"
+            
+            
         return true
         }
     }
@@ -66,6 +54,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let email = user.profile.email
         NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"),object:nil, userInfo: ["statusText": "Signed in user: \n\(fullName!)"])
         let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/users")!
+//        var request = URLRequest(url: url)
+////        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        request.httpMethod = "POST"
+//        guard let userOAUTHID = user.serverAuthCode
+//            else {return}
+//        let parameters: [String: String] = [
+//            "oauthID":userOAUTHID
+//        ]
+//        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+//
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            guard let data = data,
+//                let response = response as? HTTPURLResponse,
+//                error == nil else {                                              // check for fundamental networking error
+//                print("error", error ?? "Unknown error")
+//                return
+//            }
+//
+//            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+//                print("statusCode should be 2xx, but is \(response.statusCode)")
+//                print("response = \(response)")
+//                return
+//            }
+//
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(responseString)")
+//        }
+//
+//        task.resume()
+
+        
         if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
             window?.rootViewController = basicProfileVC
             self.window?.makeKeyAndVisible()
@@ -115,5 +135,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }
-
 

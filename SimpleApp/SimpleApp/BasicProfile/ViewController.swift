@@ -12,7 +12,7 @@ import GoogleSignIn
 class ViewController: UIViewController{
     
     //protocol member
-    var jsonPassedThroughViews: [String : Any] = [:]
+    var jsonPassedThroughViews: [String : String] = [:]
     var jsonDelegate: JSONTransferDelegateProtocol? = nil
 //    var basicInfoJSON: [String: Any] = [:]
     
@@ -51,8 +51,9 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet var housingSC: UISegmentedControl!
+    
     @IBAction func nextButtonTapped(_ sender: Any) {
-        
         guard let nameText = nameTextField.text
             else {return}
         guard let ageText = ageTextField.text
@@ -72,7 +73,6 @@ class ViewController: UIViewController{
             self.present(alert, animated: true)
             return
         }
-        
         jsonPassedThroughViews = [
             "Name": nameText,
             "Age": ageText,
@@ -81,11 +81,20 @@ class ViewController: UIViewController{
             "Year": yearText
         ]
         print(jsonPassedThroughViews)
-        let onCampusVC = self.storyboard?.instantiateViewController(withIdentifier: "OnCampusVC") as! OnCampusAboutMeViewController
-        onCampusVC.modalPresentationStyle = .fullScreen
-        onCampusVC.jsonFromPreviousPage = jsonPassedThroughViews
-        
-        present(onCampusVC, animated:true)
+        if(housingSC.selectedSegmentIndex == 0){
+            let onCampusVC = self.storyboard?.instantiateViewController(withIdentifier: "OnCampusVC") as! OnCampusAboutMeViewController
+            onCampusVC.modalPresentationStyle = .fullScreen
+            onCampusVC.jsonFromPreviousPage = jsonPassedThroughViews
+            
+            present(onCampusVC, animated:true)
+        }
+        else{ //off campus
+            let offCampus = self.storyboard?.instantiateViewController(withIdentifier: "OffCampusAboutMe") as! scrollController
+                       offCampus.modalPresentationStyle = .fullScreen
+                       offCampus.jsonFromPreviousPage = jsonPassedThroughViews
+                       
+                       present(offCampus, animated:true)
+        }
         
     }
 }

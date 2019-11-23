@@ -13,7 +13,7 @@ import UIKit
 class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     
-    lazy var jsonFromPreviousPage: [String : Any] = [:]
+    lazy var jsonFromPreviousPage: [String : String] = [:]
     
     
     
@@ -87,14 +87,13 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
         guard let finalGuestOrNotValue = guestSegmentedControl.titleForSegment(at: guestSegmentedControl.selectedSegmentIndex)
             else {return}
         //slider values are guaranteed to never be nil
-        let finalOutgoingOrNot = Int(round(outgoingSlider.value))
-        let finalBelongingsOrNot = Int(round(belongingsSlider.value))
-        let finalNeatOrNot = Int(round(neatnessSlider.value))
-        let finalNoisyOrNot = Int(round(noisinessSlider.value))
+        let finalOutgoingOrNot = String(round(outgoingSlider.value))
+        let finalBelongingsOrNot = String(round(belongingsSlider.value))
+        let finalNeatOrNot = String(round(neatnessSlider.value))
+        let finalNoisyOrNot = String(round(noisinessSlider.value))
         guard let finalHobbies = hobbiesTextView.text
             else {return}
-        
-        let onCampusJSON:[String:Any] = [
+        let onCampusJSON:[String:String] = [
             "Dorm": finalDormSelection!,
             "RoomType": finalRoomTypeSelection!,
             "BedTime": finalBedTime!,

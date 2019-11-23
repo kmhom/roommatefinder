@@ -11,7 +11,7 @@ import UIKit
 //no protocols needed
 class OnCampusRoommateViewController: UIViewController  {
 
-    lazy var jsonFromPreviousPage: [String: Any] = [:]
+    lazy var jsonFromPreviousPage: [String: String] = [:]
     var bedTime:String!
     var wakeupTime:String!
     
@@ -47,12 +47,12 @@ class OnCampusRoommateViewController: UIViewController  {
         guard let finalGuestOrNotValue = guestsSegmentedControl.titleForSegment(at: guestsSegmentedControl.selectedSegmentIndex)
             else {return}
         //slider values are guaranteed to never be nil
-        let finalOutgoingOrNot = Int(round(introOrExtroSlider.value))
-        let finalBelongingsOrNot = Int(round(belongingsSlider.value))
-        let finalNeatOrNot = Int(round(neatnessSlider.value))
-        let finalNoisyOrNot = Int(round(noisinessSlider.value))
+        let finalOutgoingOrNot = String(round(introOrExtroSlider.value))
+        let finalBelongingsOrNot = String(round(belongingsSlider.value))
+        let finalNeatOrNot = String(round(neatnessSlider.value))
+        let finalNoisyOrNot = String(round(noisinessSlider.value))
         
-        let roommateJSON:[String:Any] = [   "RoommateBedTime":finalBedTime!,
+        let roommateJSON:[String:String] = [   "RoommateBedTime":finalBedTime!,
             "RoommateWakeupTime": finalWakeupTime!,
             "RoommateGuests": finalGuestOrNotValue,
             "RoommateOutgoing": finalOutgoingOrNot,
@@ -61,38 +61,94 @@ class OnCampusRoommateViewController: UIViewController  {
             "RoommateNoisy": finalNoisyOrNot
             ]
         jsonFromPreviousPage += roommateJSON
-        let jsonObject = JSONObject(name: jsonFromPreviousPage["Name"] as! String, age: jsonFromPreviousPage["Age"] as! String, gender: jsonFromPreviousPage["Gender"] as! String, major: jsonFromPreviousPage["Major"] as! String, year: jsonFromPreviousPage["Year"] as! String, dormChoice: jsonFromPreviousPage["Dorm"] as! String, roomType: jsonFromPreviousPage["RoomType"] as! String, bedTime: jsonFromPreviousPage["BedTime"] as! String, wakeupTime: jsonFromPreviousPage["WakeUpTime"] as! String, inviteGuests: jsonFromPreviousPage["Guests"] as! String, outgoingness: jsonFromPreviousPage["Outgoing"] as! Int, shareBelongings: jsonFromPreviousPage["Belongings"] as! Int, neatness: jsonFromPreviousPage["Neat"] as! Int, noisiness: jsonFromPreviousPage["Noisy"] as! Int, hobbies: jsonFromPreviousPage["Hobbies"] as! String, roommateBedTime: jsonFromPreviousPage["RoommateBedTime"] as! String, rommateWakeUpTime: jsonFromPreviousPage["RoommateWakeupTime"] as! String, roommateInviteGuests: jsonFromPreviousPage["RoommateGuests"] as! String, roommateOutgoingness: jsonFromPreviousPage["RoommateOutgoing"] as! Int, roommateShareBelongings: jsonFromPreviousPage["RoommateBelongings"] as! Int, roommateNeatness: jsonFromPreviousPage["RoommateNeat"] as! Int, roommateNoisiness: jsonFromPreviousPage["RoommateNoisy"] as! Int)
-        
+        let personDictionary : Dictionary<String,String> = [
+            "ftux": "False",
+            "firstName": jsonFromPreviousPage["Name"]!,
+            "lastName":"TestMan",
+            "email":"akshprab@gmail.com",
+            "token":"GOOGLE_TOKEN_123532",
+            "gender": jsonFromPreviousPage["Gender"]!,
+            "age": jsonFromPreviousPage["Age"]!,
+            "grade": jsonFromPreviousPage["Year"]!,
+            "major": jsonFromPreviousPage["Major"]!,
+            "aboutMeCampusLiving": "On",
+            "aboutMeDorm": jsonFromPreviousPage["Dorm"]!,
+            "aboutMeRoomType": jsonFromPreviousPage["RoomType"]!,
+            "aboutMeBedTime": jsonFromPreviousPage["BedTime"]!,
+            "aboutMeWakeUpTime": jsonFromPreviousPage["WakeUpTime"]!,
+            "aboutMeGuests": jsonFromPreviousPage["Guests"]!,
+            "aboutMeIntrovertedOutgoing": jsonFromPreviousPage["Outgoing"]!,
+            "aboutMeShareStuffKeepStuff": jsonFromPreviousPage["Belongings"]!,
+            "aboutMeMessyOrganized": jsonFromPreviousPage["Neat"]!,
+            "aboutMeQuietLoud": jsonFromPreviousPage["Noisy"]!,
+            "aboutMeHobbies": jsonFromPreviousPage["Hobbies"]!,
+            "aboutMeIdealAccomodation": "",
+            "aboutMeHousingType": "",
+            "aboutMeDistanceFromSCU": "",
+            "aboutMeCar": "",
+            "aboutMePet":"",
+            "aboutMeRentBudget":"",
+            "aboutRoommateBedTime":jsonFromPreviousPage["RoommateBedTime"]!,
+            "aaboutRoommateWakeUpTime": jsonFromPreviousPage["RoommateWakeupTime"]!,
+            "aboutRoomateGuest":jsonFromPreviousPage["RoommateGuests"]!,
+            "aboutRoommateIntrovertedOutgoing": jsonFromPreviousPage["RoommateOutgoing"]!,
+            "aboutRoommateShareStuffKeepStuff":jsonFromPreviousPage["RoommateBelongings"]!,
+            "aboutRoommateMessyOrganized": jsonFromPreviousPage["RoommateNeat"]!,
+            "aboutRoommateQuietLoud":  jsonFromPreviousPage["RoommateNoisy"]!,
+            "aboutRoommateAdditionalReq": ""
+        ]
+        print(personDictionary)
 
-        //let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
-        let encoder = JSONEncoder()
-        do {
-            let result = try encoder.encode(jsonObject)
-            if let resultString = String(data: result, encoding: .utf8){
-                print(resultString)
-            }
-            let url = URL(string:
-                       "https://scuroommatefinder.herokuapp.com/api/users")!
-                   var request = URLRequest(url: url)
-                   request.httpMethod = "POST"
-                   request.httpBody = result
-                   let task = URLSession.shared.dataTask(with: request){
-                       data, response, error in
-                       guard let data = data, error == nil else{
-                           print(error?.localizedDescription ?? "No data")
-                           return
-                       }
-                       let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                       if let responseJSON = responseJSON as? [String: Any]{
-                           print(responseJSON)
-                       }
-                   }
-             task.resume()
+            print(JSONSerialization.isValidJSONObject(personDictionary))
+        guard let uploadData = try? JSONEncoder().encode(personDictionary) else{
+            
+            
+            return
+    
+            
         }
-            catch{
-                print(error)
+            print(uploadData)
+            let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/users")!
+            //let session = URLSession.shared
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            if let error = error{
+                print("error: \(error)")
+                return
             }
-    }
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else{
+                    return
+            }
+            if let mimeType = response.mimeType,
+            mimeType == "application/json",
+            let data = data,
+                let dataString = String(data:data, encoding: .utf8){
+                print("got data: \(dataString)")
+            }
+        }
+        task.resume()
+        
+//            let session = URLSession.shared.dataTask(with: request)
+//            {data, response, error in //request closure
+//
+//                guard let data = data, error == nil else {
+//                    print(error?.localizedDescription ?? "No data")
+//                    return
+//                }
+//                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+//                if let responseJSON = responseJSON as? [String: String]{
+//                    print(responseJSON)
+//                }
+//
+//            }
+//            session.resume()
+                
+    
+ 
+}
     @IBAction func wakeupPickerChanged(_ sender: UIDatePicker) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
