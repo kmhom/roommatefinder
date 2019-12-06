@@ -17,6 +17,7 @@ class GoogleSignInViewController: UIViewController, GIDSignInDelegate{
         } else {
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabbarVC = self.storyboard?.instantiateViewController(withIdentifier: "BasicProfileViewController") as! ViewController
+            tabbarVC.modalPresentationStyle = .fullScreen
             self.present(tabbarVC, animated: false, completion: nil)
         }
     }

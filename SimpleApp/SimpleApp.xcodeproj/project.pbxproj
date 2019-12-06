@@ -35,8 +35,8 @@
 		BA298661238BD196001DFB77 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA298660238BD195001DFB77 /* thumbsUp.png */; };
 		BA298663238BE4C0001DFB77 /* TabbedBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298662238BE4C0001DFB77 /* TabbedBarController.swift */; };
 		BA298668238E59ED001DFB77 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298667238E59ED001DFB77 /* UserProfileViewController.swift */; };
-		BA29866A238E5D0C001DFB77 /* sidewaysCarrot.png in Resources */ = {isa = PBXBuildFile; fileRef = BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */; };
 		BA298671239928C8001DFB77 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298670239928C8001DFB77 /* FilterTableViewController.swift */; };
+		BA298675239A62B2001DFB77 /* disclosureimage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA298674239A62B2001DFB77 /* disclosureimage.png */; };
 		BA79E749237341C00067055D /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E748237341C00067055D /* AppProtocols.swift */; };
 		BA79E750237AB48A0067055D /* OnCampusRoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */; };
 		BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9718A23714AE000FEF558 /* JSONObject.swift */; };
@@ -92,8 +92,8 @@
 		BA298660238BD195001DFB77 /* thumbsUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUp.png; sourceTree = "<group>"; };
 		BA298662238BE4C0001DFB77 /* TabbedBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedBarController.swift; sourceTree = "<group>"; };
 		BA298667238E59ED001DFB77 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidewaysCarrot.png; sourceTree = "<group>"; };
 		BA298670239928C8001DFB77 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		BA298674239A62B2001DFB77 /* disclosureimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosureimage.png; sourceTree = "<group>"; };
 		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA79E748237341C00067055D /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 		BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusRoommateViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				BA298660238BD195001DFB77 /* thumbsUp.png */,
-				BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */,
+				BA298674239A62B2001DFB77 /* disclosureimage.png */,
 				BA0365A02360319800D9F487 /* sculogo.png */,
 			);
 			path = Images;
@@ -198,7 +198,7 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		BA29865B238BC1A3001DFB77 /* Tabbed Bar Controller */ = {
+		BA29865B238BC1A3001DFB77 /* NavigationBarController */ = {
 			isa = PBXGroup;
 			children = (
 				BA298662238BE4C0001DFB77 /* TabbedBarController.swift */,
@@ -206,7 +206,7 @@
 				BA29866D2399282C001DFB77 /* Filters */,
 				BA298659238BBC43001DFB77 /* MatchedUsers */,
 			);
-			path = "Tabbed Bar Controller";
+			path = NavigationBarController;
 			sourceTree = "<group>";
 		};
 		BA29866D2399282C001DFB77 /* Filters */ = {
@@ -305,7 +305,7 @@
 				BA79E74A237AB33C0067055D /* AboutMeVCs */,
 				BA79E74E237AB44D0067055D /* AboutRoommateVCs */,
 				BA29864D238672D3001DFB77 /* RatingControl.swift */,
-				BA29865B238BC1A3001DFB77 /* Tabbed Bar Controller */,
+				BA29865B238BC1A3001DFB77 /* NavigationBarController */,
 				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
 				BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */,
@@ -487,11 +487,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA03658D235E185900D9F487 /* GoogleSignIn.bundle in Resources */,
-				BA29866A238E5D0C001DFB77 /* sidewaysCarrot.png in Resources */,
 				BA298661238BD196001DFB77 /* thumbsUp.png in Resources */,
 				BA0365A12360319800D9F487 /* sculogo.png in Resources */,
 				E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */,
 				BA03659C235E3F4200D9F487 /* credentials-2.plist in Resources */,
+				BA298675239A62B2001DFB77 /* disclosureimage.png in Resources */,
 				E784C77A234E9B2800BC32F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

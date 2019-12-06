@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "00FA36BC-082D-4D70-A243-A63C09C4F0FC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SimpleApp/AboutRoommateVCs/OnCampusRoommateViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "submitAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7D35BDDC-EC82-446F-A91A-9F78C6ABECAD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -126,8 +110,8 @@
             filePath = "MatchedUsersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "presentButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +174,8 @@
             filePath = "SimpleApp/AboutRoommateVCs/OnCampusRoommateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "makePOSTRequest(personDictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -305,6 +289,243 @@
             startingLineNumber = "13"
             endingLineNumber = "13"
             landmarkName = "sign(_:didSignInFor:withError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "710A3C80-7CD6-477D-8233-EC7369BD0811"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/AboutRoommateVCs/OnCampusRoommateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "makeGETRequest(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53B49294-6B95-42A8-9068-569E933E52A1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MatchedUsersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setUpCellItemsMember(personArray:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "makeFilteredGETRequest(typeOfFilter:filter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2 - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "369">
+               </Location>
+               <Location
+                  uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2 - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "596">
+               </Location>
+               <Location
+                  uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2 - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "792">
+               </Location>
+               <Location
+                  uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2 - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "988">
+               </Location>
+               <Location
+                  uuid = "73931E9B-38CE-4C32-B60A-95A78D0590C2 - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E21CFF7-690D-495B-BB4B-B142D131444C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "makeFilteredGETRequest(typeOfFilter:filter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E21CFF7-690D-495B-BB4B-B142D131444C - db87cc054c22a2c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "3928">
+               </Location>
+               <Location
+                  uuid = "3E21CFF7-690D-495B-BB4B-B142D131444C - a93e9af55b99052d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SimpleApp.FilterControlViewController.makeFilteredGETRequest(typeOfFilter: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "SimpleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akshay/Desktop/roommatefinder/SimpleApp/SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "223">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79856913-0A7C-4768-AAD7-BB1CBA8E2C45"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/AboutRoommateVCs/OnCampusRoommateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "makeGETRequest(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E59A3E1-391A-4E8A-9556-10566D1B33C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "filterUsersAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F66EC01-0AE4-40F5-AD2E-561D2085E3DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/NavigationBarController/Filters/FilterControlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "filterUsersAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCF42AA1-F029-4AC9-BAB9-DB335EAF4CD7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleApp/NavigationBarController/Filters/FilterTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

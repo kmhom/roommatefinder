@@ -1053,7 +1053,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cld-xI-y7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7514" y="-640"/>
+            <point key="canvasLocation" x="7535" y="-656"/>
         </scene>
         <!--Filter Control View Controller-->
         <scene sceneID="mnY-1t-GAv">
@@ -1228,7 +1228,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undergraduate/Graduate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuS-bm-97k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuS-bm-97k">
                                 <rect key="frame" x="15" y="340" width="375" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Kfr-0n-IVo"/>
@@ -1307,7 +1307,13 @@
                         <viewLayoutGuide key="safeArea" id="rkW-Ah-SvF"/>
                     </view>
                     <connections>
-                        <outlet property="hobbiesTextView" destination="u6U-3b-IFc" id="A4b-br-k0p"/>
+                        <outlet property="ageLabel" destination="1NW-1X-SZO" id="lmj-LZ-HK6"/>
+                        <outlet property="emailLabel" destination="HaD-fo-BU9" id="BUn-rr-qfm"/>
+                        <outlet property="genderLabel" destination="H4g-Ks-rXW" id="oXX-AH-uKc"/>
+                        <outlet property="hobbiesTextView" destination="u6U-3b-IFc" id="ZyN-L6-0Ol"/>
+                        <outlet property="majorLabel" destination="Bbb-0W-BMt" id="2K0-ul-Xox"/>
+                        <outlet property="nameLabel" destination="wBr-cA-3Au" id="rLn-RW-4Cm"/>
+                        <outlet property="yearLabel" destination="RuS-bm-97k" id="1qg-nI-1lG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5l-bI-0ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

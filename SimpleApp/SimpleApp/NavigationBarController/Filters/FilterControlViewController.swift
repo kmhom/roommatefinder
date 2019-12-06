@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet var filterView: UIView!
     @IBOutlet var filterOptionsPickerView: UIPickerView!
     
+    let dispatchGroup = DispatchGroup()
     lazy var personArray = [GETPersonObject]()
     lazy var ageData: [String] = [String]()
     lazy var filterOptions : [String] = [String]()
@@ -21,6 +23,8 @@ class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIP
     var filterPickerSelection: String!
     var genderPickerSelection: String!
     var majorPickerSelection: String!
+    var typeOfFilter: String!
+    var todoEndpoint: String!
     
     lazy var firstNameTextField: UITextField = {
         var nametextfield = UITextField(frame: CGRect(x: 0, y: 0, width: 370, height: 80))
@@ -91,33 +95,51 @@ class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIP
         
         switch filterPickerSelection{
         case filterOptions[0]:
-            makeFilteredGETRequest(filter: firstNameTextField.text ?? "")
+            makeFilteredGETRequest(typeOfFilter: typeOfFilter, filter: firstNameTextField.text ?? "")
         case filterOptions[1]:
-            makeFilteredGETRequest(filter: lastNameTextField.text ?? "")
+            makeFilteredGETRequest(typeOfFilter: typeOfFilter, filter: lastNameTextField.text ?? "")
         case filterOptions[2]:
-            makeFilteredGETRequest(filter: agePickerSelection)
+            makeFilteredGETRequest(typeOfFilter: typeOfFilter, filter: agePickerSelection)
         case filterOptions[3]:
-            makeFilteredGETRequest(filter: genderPickerSelection)
+            makeFilteredGETRequest(typeOfFilter: typeOfFilter, filter: genderPickerSelection)
         case filterOptions[4]:
-            makeFilteredGETRequest(filter: majorPickerSelection.replacingOccurrences(of: " ", with: ""))
+            makeFilteredGETRequest(typeOfFilter: typeOfFilter, filter: majorPickerSelection.replacingOccurrences(of: " ", with: ""))
         default: break
             
         }
+        
+        print(self.personArray)
         let filterUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "FilterTableViewController") as! FilterTableViewController
-        filterUsersVC.modalPresentationStyle = .fullScreen
-        personArray = self.tempParseThroughArray()
+       // filterUsersVC.modalPresentationStyle = .fullScreen
+        filterUsersVC.personArray = self.personArray
         filterUsersVC.setUpCellItemsMember(personArray: personArray)
         self.present(filterUsersVC, animated: true)
         
     }
-    func makeFilteredGETRequest(filter: String){
-        let todoEndpoint: String = "https://scuroommatefinder.herokuapp.com/api/users/searchByFirstName/\(filter)"
-        print(todoEndpoint)
-        guard let url = URL(string: todoEndpoint) else{
+    func makeFilteredGETRequest(typeOfFilter: String, filter: String!){
+        dispatchGroup.enter()
+        switch typeOfFilter {
+        case "FirstName":
+             todoEndpoint =  "https://scuroommatefinder.herokuapp.com/api/users/searchByFirstName/"
+        case "LastName":
+            todoEndpoint = "https://scuroommatefinder.herokuapp.com/api/users/filter/searchByLastName/"
+        case "Age":
+            todoEndpoint = "https://scuroommatefinder.herokuapp.com/api/users/filter/searchByAge/"
+        case "Gender":
+            todoEndpoint = "https://scuroommatefinder.herokuapp.com/api/users/filter/searchByGender/"
+        case "Major":
+            todoEndpoint = "https://scuroommatefinder.herokuapp.com/api/users/filter/searchByMajor"
+        default: break
+        }
+        todoEndpoint += filter
+        todoEndpoint = todoEndpoint.replacingOccurrences(of: "\"", with: "")
+        todoEndpoint = String(todoEndpoint)
+        print(todoEndpoint!)
+        guard let url = URL(string: todoEndpoint!) else{
                 print("Error: cannot create URL")
             return
             }
-            var urlRequest = URLRequest(url: url)
+             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "GET"
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -139,7 +161,7 @@ class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIP
                     if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String:Any]]{
                           print("this is the jsonArray: \(jsonArray)")
                         self.personArray = self.parseThroughArray(JSONArray: jsonArray)
-                        print("this is the  final personArray to use through delegates \(self.personArray)")
+                        print("this is the  final personArray to used through delegates \(self.personArray)")
                     }else {print("bad json")}
                 } catch let error as NSError{
                     print(error)
@@ -148,8 +170,11 @@ class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIP
                 do{
                     print("Error: \(jsonError)")
                 }
+                print("second leave within post")
+                self.dispatchGroup.leave()
             }
             task.resume()
+        dispatchGroup.wait()
     }
     
     func setupConstraints(filterPickerSelection: String){
@@ -160,30 +185,35 @@ class FilterControlViewController: UIViewController, UIPickerViewDataSource, UIP
             genderPickerView.removeFromSuperview()
             majorPickerView.removeFromSuperview()
             filterView.addSubview(firstNameTextField)
+            typeOfFilter = "FirstName"
         case "Last name":
             firstNameTextField.removeFromSuperview()
             agePickerView.removeFromSuperview()
             genderPickerView.removeFromSuperview()
             majorPickerView.removeFromSuperview()
             filterView.addSubview(lastNameTextField)
+            typeOfFilter = "LastName"
         case "Age":
             firstNameTextField.removeFromSuperview()
             lastNameTextField.removeFromSuperview()
             genderPickerView.removeFromSuperview()
             majorPickerView.removeFromSuperview()
             filterView.addSubview(agePickerView)
+            typeOfFilter = "Age"
         case "Gender":
             firstNameTextField.removeFromSuperview()
             lastNameTextField.removeFromSuperview()
             agePickerView.removeFromSuperview()
             majorPickerView.removeFromSuperview()
             filterView.addSubview(genderPickerView)
+            typeOfFilter = "Gender"
         case "Major":
             firstNameTextField.removeFromSuperview()
             lastNameTextField.removeFromSuperview()
             agePickerView.removeFromSuperview()
             genderPickerView.removeFromSuperview()
             filterView.addSubview(majorPickerView)
+            typeOfFilter = "Major"
         default:
             break
         }

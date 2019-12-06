@@ -11,6 +11,13 @@ import UIKit
 class UserProfileViewController: UIViewController {
 
     @IBOutlet var hobbiesTextView: UITextView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var genderLabel: UILabel!
+    @IBOutlet var majorLabel: UILabel!
+    @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hobbiesTextView?.layer.borderWidth = 1

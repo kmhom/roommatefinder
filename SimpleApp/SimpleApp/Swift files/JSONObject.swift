@@ -122,7 +122,7 @@ struct GETPersonObject{
     let firstName: Any
     let lastName: Any
     let gender: Any
-    let age: Any
+    let age: Int
     let grade: Any
     let major: Any
     let aboutMeHobbies: Any
@@ -142,7 +142,7 @@ struct GETPersonObject{
         self.firstName = personObject["firstName"]! as Any
         self.lastName = personObject["lastName"]! as Any
         self.gender = personObject["gender"]! as Any
-        self.age = personObject["age"]! as Any
+        self.age = personObject["age"]! as! Int
         self.grade = personObject["grade"]! as Any
         self.major = personObject["major"]! as Any
         self.aboutMeHobbies = personObject["aboutMeHobbies"]! as Any

@@ -22,6 +22,7 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         self.title = "Matches"
         setupTableView()
+        tableView.separatorColor = .black
         print(cellItems)
         print("printing person object from matched vc")
         print(personArray)
@@ -34,13 +35,15 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
         var yearArray = [String]()
         var majorArray = [String]()
         var onOrOffCampusArray = [String]()
+        var hobbiesArray = [String]()
         for i in 0...9{
             nameArray.append("\(personArray[i].firstName) \(personArray[i].lastName)")
             genderArray.append(personArray[i].gender as? String ?? "no gender")
-            ageArray.insert(personArray[i].age as? Int ?? 0, at: i)
+            ageArray.append(personArray[i].age)
             yearArray.append(personArray[i].grade as? String ?? "no year")
             majorArray.append(personArray[i].major as? String ?? "no major")
             onOrOffCampusArray.append(personArray[i].aboutMeCampusLiving as? String ?? "neither")
+            hobbiesArray.append(personArray[i].aboutMeHobbies as? String ?? "No hobbies given")
         }
             cellItems["Names"] = nameArray
             cellItems["Gender"] = genderArray
@@ -48,6 +51,7 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
             cellItems["Year"] = yearArray
             cellItems["Major"] = majorArray
             cellItems["On/Off Campus"] = onOrOffCampusArray
+            cellItems["Hobbies"] = hobbiesArray
             
        }
  
@@ -58,18 +62,6 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.register(MatchedCells.self, forCellReuseIdentifier: "matchedUsersCellId")
         view.addSubview(tableView)
-//        let tableViewHeader: UIView = {
-//            let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
-//            let matchedUsersLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 300, height: 50))
-//            matchedUsersLabel.text = "Matched Users"
-//            view.addSubview(matchedUsersLabel)
-//            NSLayoutConstraint.activate([matchedUsersLabel.topAnchor.constraint(equalTo: tableView.topAnchor),
-//            matchedUsersLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//            matchedUsersLabel.rightAnchor.constraint(equalTo: tableView.rightAnchor),
-//            matchedUsersLabel.leftAnchor.constraint(equalTo: tableView.leftAnchor),])
-//            return view
-//        }()
-        //self.tableView.tableHeaderView = tableViewHeader
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
@@ -79,13 +71,23 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
     }
     //TableView delegate
     func presentButtonTapped() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "UserDetail") as? UserProfileViewController
-        viewController?.modalPresentationStyle = .fullScreen
-        viewController?.view.backgroundColor = UIColor.white
-        self.present(viewController!, animated: true, completion: nil)
+        let userProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserDetail") as! UserProfileViewController
+       userProfileViewController.modalPresentationStyle = .fullScreen
+       userProfileViewController.view.backgroundColor = UIColor.white
+       self.present(userProfileViewController, animated: true, completion: nil)
+        print(cellItems)
 
-    }
+        userProfileViewController.nameLabel.text = "Name: \((cellItems["Names"]![0] as? String)!)"
+       userProfileViewController.genderLabel.text = "Gender: \((cellItems["Gender"]?[0])!)"
+       userProfileViewController.ageLabel.text = "Age: \((cellItems["Age"]![0] as! Int))"
+       userProfileViewController.yearLabel.text = "Year: \((cellItems["Year"]?[0])!)"
+       userProfileViewController.majorLabel.text = "Major: \((cellItems["Major"]?[0])!)"
+        
+        userProfileViewController.emailLabel.text = "Email: \((personArray[0].firstName as! String).lowercased()).\((personArray[0].lastName as! String).lowercased())@gmail.com"
+        
+        userProfileViewController.hobbiesTextView.text = "\((cellItems["Hobbies"]![0] as? String)!)"
+}
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -96,12 +98,12 @@ class MatchedUsersViewController: UIViewController, UITableViewDelegate, UITable
         cell.delegate = self
         cell.backgroundColor = UIColor.white
         cell.setUpView()
-        cell.nameLabel.text = "Name: \(cellItems["Names"]![indexPath.row] as? String)"
-        cell.genderLabel.text = "Gender: \(cellItems["Gender"]![indexPath.row] as? String)"
-        cell.ageLabel.text = "Age: \(cellItems["Age"]![indexPath.row] as? String)"
-        cell.underGraduateYearLabel.text = "Year: \(cellItems["Year"]![indexPath.row] as? String)"
-        cell.majorLabel.text = "Major: \(cellItems["Major"]![indexPath.row] as? String)"
-        cell.onOrOffCampusLabel.text = "Living \(cellItems["On/Off Campus"]![indexPath.row] as? String) Campus"
+        cell.nameLabel.text = "Name: \((cellItems["Names"]![indexPath.row] as? String)!)"
+        cell.genderLabel.text = "Gender: \((cellItems["Gender"]![indexPath.row] as? String)!)"
+        cell.ageLabel.text = "Age: \((cellItems["Age"]![indexPath.row] as! Int))"
+        cell.underGraduateYearLabel.text = "Year: \((cellItems["Year"]![indexPath.row] as? String)!)"
+        cell.majorLabel.text = "Major: \((cellItems["Major"]![indexPath.row] as? String)!)"
+        cell.onOrOffCampusLabel.text = "Living \((cellItems["On/Off Campus"]![indexPath.row] as? String)!) Campus"
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,6 +130,7 @@ class MatchedCells: UITableViewCell{
     }()
     let nameLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "Name: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -136,6 +139,7 @@ class MatchedCells: UITableViewCell{
     }()
     let genderLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "Gender: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -144,6 +148,7 @@ class MatchedCells: UITableViewCell{
     }()
     let ageLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "Age: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -152,6 +157,7 @@ class MatchedCells: UITableViewCell{
     }()
     let underGraduateYearLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "Year: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -160,6 +166,7 @@ class MatchedCells: UITableViewCell{
     }()
     let majorLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "Major: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -168,6 +175,7 @@ class MatchedCells: UITableViewCell{
     }()
     let onOrOffCampusLabel: UILabel = {
         let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: 375).isActive = true
         label.text = "On/Off Campus: "
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -177,7 +185,7 @@ class MatchedCells: UITableViewCell{
     let presentButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-            let image = UIImage(named: "sidewaysCarrot.png") as UIImage?
+            let image = UIImage(named: "disclosureimage.png") as UIImage?
             button.setImage(image, for: [])
             button.translatesAutoresizingMaskIntoConstraints = false
             return button
@@ -201,39 +209,33 @@ class MatchedCells: UITableViewCell{
         ])
        //name
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: -80).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
        //gender
         genderLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        genderLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         genderLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: -50).isActive = true
         genderLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         //age
         ageLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        ageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         ageLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: -20).isActive = true
         ageLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         //undergrad year
         underGraduateYearLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        underGraduateYearLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         underGraduateYearLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 10).isActive = true
         underGraduateYearLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         //major
         majorLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        majorLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         majorLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 40).isActive = true
         majorLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         //on or campus
         onOrOffCampusLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        onOrOffCampusLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         onOrOffCampusLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 70).isActive = true
         onOrOffCampusLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         //button constraints
-        presentButton.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: 20).isActive = true
-        presentButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        presentButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        presentButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 70).isActive = true
+        presentButton.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -20).isActive = true
+        presentButton.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        presentButton.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        presentButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 0).isActive = true
     }
     @IBAction func presentNewView(sender: UIButton){
         self.delegate.presentButtonTapped()

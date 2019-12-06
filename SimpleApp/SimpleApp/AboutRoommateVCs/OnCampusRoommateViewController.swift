@@ -44,9 +44,9 @@ class OnCampusRoommateViewController: UIViewController  {
     }
 
     @IBAction func submitAction(_ sender: Any) {
+
         let finalBedTime = self.bedTime
         let finalWakeupTime = self.wakeupTime
-            
         guard let finalGuestOrNotValue = guestsSegmentedControl.titleForSegment(at: guestsSegmentedControl.selectedSegmentIndex)
             else {return}
         //slider values are guaranteed to never be nil
@@ -101,23 +101,17 @@ class OnCampusRoommateViewController: UIViewController  {
             "aboutRoommateAdditionalReq": ""
         ]
         self.makePOSTRequest(personDictionary: personDictionary)
-        print("our id \(idAppendedToGet)")
-        //self.makeGETRequest(id: idAppendedToGet)
-        dispatchGroup.notify(queue: .main){
+        print("this is our id right after the post method is done : \(idAppendedToGet)")
+        self.makeGETRequest(id: idAppendedToGet)
         print("Get and post tasks have been completed, print to assure they are not  nil")
         print(self.personArray)
-            //print(self.personArray[0].age)
-            //print(self.personArray[0].firstName)
-            
-        let matchedUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedUsersViewController") as! MatchedUsersViewController
-            //let matchedUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "FilterControlViewController") as! FilterControlViewController
+        let matchedUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "TabbedBar") as! TabbedBarController
         matchedUsersVC.modalPresentationStyle = .fullScreen
         matchedUsersVC.personArray = self.personArray
-        matchedUsersVC.setUpCellItemsMember(personArray: matchedUsersVC.personArray)
         self.present(matchedUsersVC, animated:true)
-        }
 }
     func makePOSTRequest(personDictionary: Dictionary<String,String>) {
+        print("first enter within post")
         dispatchGroup.enter()
             print(JSONSerialization.isValidJSONObject(personDictionary))
             guard let uploadData = try? JSONEncoder().encode(personDictionary) else{
@@ -125,7 +119,6 @@ class OnCampusRoommateViewController: UIViewController  {
             }
                 print(uploadData)
                 let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/createUsers")!
-                //let session = URLSession.shared
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -141,21 +134,28 @@ class OnCampusRoommateViewController: UIViewController  {
                     let dataString = String(data:data, encoding: .utf8){
                     print("got data: \(dataString)")
                     self.idAppendedToGet = dataString
+                    print("first leave within post")
                     self.dispatchGroup.leave()
                 }
             }
             task.resume()
+        dispatchGroup.wait()
+        print("this is our id right after the post method closure\(idAppendedToGet)")
     }
-    func makeGETRequest(id: String){
-        //queue.sync {
+    func makeGETRequest(id: String!){
         dispatchGroup.enter()
+        print("second enter within get")
         print("this is the id that the matching algorithm will match to:\(id)")
-        let todoEndpoint: String = "https://scuroommatefinder.herokuapp.com/api/users/getMatches/\(id)"
-        guard let url = URL(string: todoEndpoint) else{
+        var todoEndpoint: String! = "https://scuroommatefinder.herokuapp.com/api/users/getMatches/"
+        todoEndpoint += id
+        todoEndpoint = todoEndpoint.replacingOccurrences(of: "\"", with: "")
+        todoEndpoint = String(todoEndpoint)
+        print(todoEndpoint!)
+        guard let url = URL(string: todoEndpoint!) else{
                 print("Error: cannot create URL")
             return
             }
-            var urlRequest = URLRequest(url: url)
+             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "GET"
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -177,7 +177,7 @@ class OnCampusRoommateViewController: UIViewController  {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String:Any]]{
                           print("this is the jsonArray: \(jsonArray)")
                         self.personArray = self.parseThroughArray(JSONArray: jsonArray)
-                        print("this is the  final personArray to use through delegates \(self.personArray)")
+                        print("this is the  final personArray to used through delegates \(self.personArray)")
                     }else {print("bad json")}
                 } catch let error as NSError{
                     print(error)
@@ -186,10 +186,11 @@ class OnCampusRoommateViewController: UIViewController  {
                 do{
                     print("Error: \(jsonError)")
                 }
+                print("second leave within post")
                 self.dispatchGroup.leave()
             }
             task.resume()
-        //}
+        dispatchGroup.wait()
     }
     
     func parseThroughArray(JSONArray: [[String:Any]]) -> [GETPersonObject]{
