@@ -9,7 +9,17 @@
 import UIKit
 import GoogleSignIn
 
-class GoogleSignInViewController: UIViewController{
+class GoogleSignInViewController: UIViewController, GIDSignInDelegate{
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+          withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbarVC = self.storyboard?.instantiateViewController(withIdentifier: "BasicProfileViewController") as! ViewController
+            self.present(tabbarVC, animated: false, completion: nil)
+        }
+    }
     
     @IBOutlet weak var googleLogoImage: UIImageView!
     @IBOutlet weak var signInButton: UIButton!
@@ -18,6 +28,7 @@ class GoogleSignInViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }

@@ -9,6 +9,7 @@
 import UIKit
 
 class scrollController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.housingOptions.count
@@ -23,18 +24,6 @@ class scrollController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    lazy var jsonFromPreviousPage: [String : Any] = [:]
     let housingOptions: [String] = ["Apartment", "Townhouse", "Flat", "House"]
     
     let yesNO: [String] = ["Yes", "No"]
@@ -42,6 +31,7 @@ class scrollController: UIViewController, UITableViewDataSource, UITableViewDele
     let orgMessy: [String] = ["Organized", "Messy"]
     
     let cellReuseIdentifier = "cell"
+    lazy var jsonFromPreviousPage: [String : String] = [:]
     
     //MARK: Multiple Choice TableView
     @IBOutlet weak var housingChoice: UITableView!
@@ -58,6 +48,11 @@ class scrollController: UIViewController, UITableViewDataSource, UITableViewDele
         self.housingChoice.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         housingChoice.dataSource = self
         housingChoice.delegate = self
+        
+        self.haveCar.register(UITableViewCell.self,
+            forCellReuseIdentifier: cellReuseIdentifier)
+        haveCar.dataSource = self
+        haveCar.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -84,6 +79,24 @@ class scrollController: UIViewController, UITableViewDataSource, UITableViewDele
         print("You tapped cell number \(indexPath.row).")
     }
    
+    
+    func haveCar(_ haveCar: UITableView, numberOfRowsInSection section: Int) -> Int {
+          return self.yesNO.count
+      }
+      
+      func haveCar(_ haveCar: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         
+          let cell = housingChoice.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
+          
+          cell.textLabel?.text = self.yesNO[indexPath.row]
+          
+          return cell
+      }
+      
+      func haveCar(_ haveCar: UITableView, didSelectRowAt indexPath: IndexPath) {
+          print("You tapped cell number \(indexPath.row).")
+      }
+     
     
     
     //MARK: Time UIDatePicker

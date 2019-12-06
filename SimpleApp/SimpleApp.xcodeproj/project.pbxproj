@@ -28,9 +28,15 @@
 		BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */; };
 		BA2986442383205C001DFB77 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2986432383205C001DFB77 /* ClassExtensions.swift */; };
 		BA298651238672D3001DFB77 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864D238672D3001DFB77 /* RatingControl.swift */; };
-		BA298652238672D3001DFB77 /* displayUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864E238672D3001DFB77 /* displayUsers.swift */; };
-		BA298653238672D3001DFB77 /* scrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29864F238672D3001DFB77 /* scrollController.swift */; };
-		BA298654238672D3001DFB77 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298650238672D3001DFB77 /* userProfile.swift */; };
+		BA298656238B7EE8001DFB77 /* scrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298655238B7EE8001DFB77 /* scrollController.swift */; };
+		BA298658238BBC2F001DFB77 /* MatchedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298657238BBC2F001DFB77 /* MatchedUsersViewController.swift */; };
+		BA29865D238BC261001DFB77 /* UserProfileSignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29865C238BC261001DFB77 /* UserProfileSignOutViewController.swift */; };
+		BA29865F238BC284001DFB77 /* FilterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29865E238BC284001DFB77 /* FilterControlViewController.swift */; };
+		BA298661238BD196001DFB77 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA298660238BD195001DFB77 /* thumbsUp.png */; };
+		BA298663238BE4C0001DFB77 /* TabbedBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298662238BE4C0001DFB77 /* TabbedBarController.swift */; };
+		BA298668238E59ED001DFB77 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298667238E59ED001DFB77 /* UserProfileViewController.swift */; };
+		BA29866A238E5D0C001DFB77 /* sidewaysCarrot.png in Resources */ = {isa = PBXBuildFile; fileRef = BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */; };
+		BA298671239928C8001DFB77 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA298670239928C8001DFB77 /* FilterTableViewController.swift */; };
 		BA79E749237341C00067055D /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E748237341C00067055D /* AppProtocols.swift */; };
 		BA79E750237AB48A0067055D /* OnCampusRoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */; };
 		BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9718A23714AE000FEF558 /* JSONObject.swift */; };
@@ -78,9 +84,16 @@
 		BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffCampusViewController.swift; sourceTree = "<group>"; };
 		BA2986432383205C001DFB77 /* ClassExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		BA29864D238672D3001DFB77 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = ../../../../Downloads/roommatefinder/SimpleApp/SimpleApp/RatingControl.swift; sourceTree = "<group>"; };
-		BA29864E238672D3001DFB77 /* displayUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayUsers.swift; sourceTree = "<group>"; };
-		BA29864F238672D3001DFB77 /* scrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollController.swift; sourceTree = "<group>"; };
-		BA298650238672D3001DFB77 /* userProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		BA298655238B7EE8001DFB77 /* scrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollController.swift; sourceTree = "<group>"; };
+		BA298657238BBC2F001DFB77 /* MatchedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedUsersViewController.swift; sourceTree = "<group>"; };
+		BA29865A238BBC4C001DFB77 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		BA29865C238BC261001DFB77 /* UserProfileSignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSignOutViewController.swift; sourceTree = "<group>"; };
+		BA29865E238BC284001DFB77 /* FilterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlViewController.swift; sourceTree = "<group>"; };
+		BA298660238BD195001DFB77 /* thumbsUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUp.png; sourceTree = "<group>"; };
+		BA298662238BE4C0001DFB77 /* TabbedBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedBarController.swift; sourceTree = "<group>"; };
+		BA298667238E59ED001DFB77 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidewaysCarrot.png; sourceTree = "<group>"; };
+		BA298670239928C8001DFB77 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA79E748237341C00067055D /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 		BA79E74F237AB48A0067055D /* OnCampusRoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCampusRoommateViewController.swift; sourceTree = "<group>"; };
@@ -167,15 +180,49 @@
 		BA03659F2360318400D9F487 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA298660238BD195001DFB77 /* thumbsUp.png */,
+				BA298669238E5D0B001DFB77 /* sidewaysCarrot.png */,
 				BA0365A02360319800D9F487 /* sculogo.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		BA298659238BBC43001DFB77 /* MatchedUsers */ = {
+			isa = PBXGroup;
+			children = (
+				BA298657238BBC2F001DFB77 /* MatchedUsersViewController.swift */,
+				BA29865A238BBC4C001DFB77 /* RatingControl.swift */,
+				BA298667238E59ED001DFB77 /* UserProfileViewController.swift */,
+			);
+			name = MatchedUsers;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BA29865B238BC1A3001DFB77 /* Tabbed Bar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA298662238BE4C0001DFB77 /* TabbedBarController.swift */,
+				BA29865C238BC261001DFB77 /* UserProfileSignOutViewController.swift */,
+				BA29866D2399282C001DFB77 /* Filters */,
+				BA298659238BBC43001DFB77 /* MatchedUsers */,
+			);
+			path = "Tabbed Bar Controller";
+			sourceTree = "<group>";
+		};
+		BA29866D2399282C001DFB77 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				BA29865E238BC284001DFB77 /* FilterControlViewController.swift */,
+				BA298670239928C8001DFB77 /* FilterTableViewController.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 		BA79E74A237AB33C0067055D /* AboutMeVCs */ = {
 			isa = PBXGroup;
 			children = (
 				BA0365A223641C7300D9F487 /* OnCampusAboutMeViewController.swift */,
+				BA298655238B7EE8001DFB77 /* scrollController.swift */,
 				BA0365AC236A71EF00D9F487 /* OffCampusViewController.swift */,
 			);
 			path = AboutMeVCs;
@@ -258,9 +305,7 @@
 				BA79E74A237AB33C0067055D /* AboutMeVCs */,
 				BA79E74E237AB44D0067055D /* AboutRoommateVCs */,
 				BA29864D238672D3001DFB77 /* RatingControl.swift */,
-				BA29864F238672D3001DFB77 /* scrollController.swift */,
-				BA29864E238672D3001DFB77 /* displayUsers.swift */,
-				BA298650238672D3001DFB77 /* userProfile.swift */,
+				BA29865B238BC1A3001DFB77 /* Tabbed Bar Controller */,
 				BA7565BA235D98A8006D63FC /* SimpleApp-Bridging-Header.h */,
 				E784C780234E9B3000BC32F4 /* Info.plist */,
 				BA970D4C235A955D004C97B8 /* GoogleSignInCocoaPods */,
@@ -442,6 +487,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA03658D235E185900D9F487 /* GoogleSignIn.bundle in Resources */,
+				BA29866A238E5D0C001DFB77 /* sidewaysCarrot.png in Resources */,
+				BA298661238BD196001DFB77 /* thumbsUp.png in Resources */,
 				BA0365A12360319800D9F487 /* sculogo.png in Resources */,
 				E784C77F234E9B3000BC32F4 /* LaunchScreen.storyboard in Resources */,
 				BA03659C235E3F4200D9F487 /* credentials-2.plist in Resources */,
@@ -577,19 +624,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA298658238BBC2F001DFB77 /* MatchedUsersViewController.swift in Sources */,
 				BA2986442383205C001DFB77 /* ClassExtensions.swift in Sources */,
-				BA298652238672D3001DFB77 /* displayUsers.swift in Sources */,
-				BA298653238672D3001DFB77 /* scrollController.swift in Sources */,
+				BA298656238B7EE8001DFB77 /* scrollController.swift in Sources */,
 				BA298651238672D3001DFB77 /* RatingControl.swift in Sources */,
-				BA298654238672D3001DFB77 /* userProfile.swift in Sources */,
 				BA79E750237AB48A0067055D /* OnCampusRoommateViewController.swift in Sources */,
 				BA0365A323641C7300D9F487 /* OnCampusAboutMeViewController.swift in Sources */,
+				BA29865D238BC261001DFB77 /* UserProfileSignOutViewController.swift in Sources */,
 				BA0365AD236A71EF00D9F487 /* OffCampusViewController.swift in Sources */,
 				E784C775234E9B2800BC32F4 /* AppDelegate.swift in Sources */,
+				BA298668238E59ED001DFB77 /* UserProfileViewController.swift in Sources */,
 				BA79E749237341C00067055D /* AppProtocols.swift in Sources */,
 				BA03659A235E1C8E00D9F487 /* GoogleSignInViewController.swift in Sources */,
 				E784C7A3234E9CD600BC32F4 /* ViewController.swift in Sources */,
+				BA298671239928C8001DFB77 /* FilterTableViewController.swift in Sources */,
+				BA29865F238BC284001DFB77 /* FilterControlViewController.swift in Sources */,
 				BAE9718B23714AE000FEF558 /* JSONObject.swift in Sources */,
+				BA298663238BE4C0001DFB77 /* TabbedBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

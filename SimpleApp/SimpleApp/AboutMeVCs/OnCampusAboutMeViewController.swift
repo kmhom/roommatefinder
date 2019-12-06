@@ -59,8 +59,6 @@ class OnCampusAboutMeViewController: UIViewController, UIPickerViewDelegate, UIP
         formatter.dateFormat = "HH:mm"
         wakeupTime = formatter.string(from: yourDate!)
         bedTime = formatter.string(from: yourDate!)
-        
-       
         self.hobbiesTextView?.layer.borderWidth = 1
     self.hobbiesTextView?.layer.borderColor = UIColor.gray.cgColor
     }

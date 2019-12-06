@@ -12,8 +12,11 @@ import UIKit
 class OnCampusRoommateViewController: UIViewController  {
 
     lazy var jsonFromPreviousPage: [String: String] = [:]
+    var personArray = [GETPersonObject]()
+    let dispatchGroup = DispatchGroup()
     var bedTime:String!
     var wakeupTime:String!
+    var idAppendedToGet: String!
     
     @IBOutlet var roommateBedTimePicker: UIDatePicker!
     @IBOutlet var roommateWakeupTimePicker: UIDatePicker!
@@ -89,7 +92,7 @@ class OnCampusRoommateViewController: UIViewController  {
             "aboutMePet":"",
             "aboutMeRentBudget":"",
             "aboutRoommateBedTime":jsonFromPreviousPage["RoommateBedTime"]!,
-            "aaboutRoommateWakeUpTime": jsonFromPreviousPage["RoommateWakeupTime"]!,
+            "aboutRoommateWakeUpTime": jsonFromPreviousPage["RoommateWakeupTime"]!,
             "aboutRoomateGuest":jsonFromPreviousPage["RoommateGuests"]!,
             "aboutRoommateIntrovertedOutgoing": jsonFromPreviousPage["RoommateOutgoing"]!,
             "aboutRoommateShareStuffKeepStuff":jsonFromPreviousPage["RoommateBelongings"]!,
@@ -97,58 +100,105 @@ class OnCampusRoommateViewController: UIViewController  {
             "aboutRoommateQuietLoud":  jsonFromPreviousPage["RoommateNoisy"]!,
             "aboutRoommateAdditionalReq": ""
         ]
-        print(personDictionary)
-
-            print(JSONSerialization.isValidJSONObject(personDictionary))
-        guard let uploadData = try? JSONEncoder().encode(personDictionary) else{
+        self.makePOSTRequest(personDictionary: personDictionary)
+        print("our id \(idAppendedToGet)")
+        //self.makeGETRequest(id: idAppendedToGet)
+        dispatchGroup.notify(queue: .main){
+        print("Get and post tasks have been completed, print to assure they are not  nil")
+        print(self.personArray)
+            //print(self.personArray[0].age)
+            //print(self.personArray[0].firstName)
             
-            
-            return
-    
-            
+        let matchedUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "MatchedUsersViewController") as! MatchedUsersViewController
+            //let matchedUsersVC = self.storyboard?.instantiateViewController(withIdentifier: "FilterControlViewController") as! FilterControlViewController
+        matchedUsersVC.modalPresentationStyle = .fullScreen
+        matchedUsersVC.personArray = self.personArray
+        matchedUsersVC.setUpCellItemsMember(personArray: matchedUsersVC.personArray)
+        self.present(matchedUsersVC, animated:true)
         }
-            print(uploadData)
-            let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/users")!
-            //let session = URLSession.shared
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
-            if let error = error{
-                print("error: \(error)")
+}
+    func makePOSTRequest(personDictionary: Dictionary<String,String>) {
+        dispatchGroup.enter()
+            print(JSONSerialization.isValidJSONObject(personDictionary))
+            guard let uploadData = try? JSONEncoder().encode(personDictionary) else{
                 return
             }
-            guard let response = response as? HTTPURLResponse,
-                (200...299).contains(response.statusCode) else{
+                print(uploadData)
+                let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/createUsers")!
+                //let session = URLSession.shared
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+                if let error = error{
+                    print("error: \(error)")
                     return
+                }
+                let response = response as? HTTPURLResponse
+                if let mimeType = response!.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                    let dataString = String(data:data, encoding: .utf8){
+                    print("got data: \(dataString)")
+                    self.idAppendedToGet = dataString
+                    self.dispatchGroup.leave()
+                }
             }
-            if let mimeType = response.mimeType,
-            mimeType == "application/json",
-            let data = data,
-                let dataString = String(data:data, encoding: .utf8){
-                print("got data: \(dataString)")
+            task.resume()
+    }
+    func makeGETRequest(id: String){
+        //queue.sync {
+        dispatchGroup.enter()
+        print("this is the id that the matching algorithm will match to:\(id)")
+        let todoEndpoint: String = "https://scuroommatefinder.herokuapp.com/api/users/getMatches/\(id)"
+        guard let url = URL(string: todoEndpoint) else{
+                print("Error: cannot create URL")
+            return
             }
-        }
-        task.resume()
-        
-//            let session = URLSession.shared.dataTask(with: request)
-//            {data, response, error in //request closure
-//
-//                guard let data = data, error == nil else {
-//                    print(error?.localizedDescription ?? "No data")
-//                    return
-//                }
-//                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-//                if let responseJSON = responseJSON as? [String: String]{
-//                    print(responseJSON)
-//                }
-//
-//            }
-//            session.resume()
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "GET"
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            let task = session.dataTask(with: urlRequest){
+                (data, response, error) in
+                guard error == nil else {
+                    print("Error calling GET")
+                    print(error!)
+                    return
+                }
+               let responseDataString = String(data: data!, encoding:  String.Encoding.utf8)?.replacingOccurrences(of: "\\", with: "")
+                print("response data: ")
+                print(responseDataString!)
                 
+                let data = responseDataString?.data(using: .utf8)!
+                print("printing data")
+                print(data)
+                do{
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String:Any]]{
+                          print("this is the jsonArray: \(jsonArray)")
+                        self.personArray = self.parseThroughArray(JSONArray: jsonArray)
+                        print("this is the  final personArray to use through delegates \(self.personArray)")
+                    }else {print("bad json")}
+                } catch let error as NSError{
+                    print(error)
+                }
+                var jsonError: NSError?
+                do{
+                    print("Error: \(jsonError)")
+                }
+                self.dispatchGroup.leave()
+            }
+            task.resume()
+        //}
+    }
     
- 
-}
+    func parseThroughArray(JSONArray: [[String:Any]]) -> [GETPersonObject]{
+        var  personArray = [GETPersonObject]()
+        for jsonObject in JSONArray{
+            personArray.append(GETPersonObject.init(personObject: jsonObject))
+        }
+        return personArray
+    }
     @IBAction func wakeupPickerChanged(_ sender: UIDatePicker) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"

@@ -22,17 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //        GIDSignin.sharedInstance()?.clientID = "com.googleusercontent.apps.338754776279-kkbp8m417i21p98pa05kl1pjm5mbr87k"
         GIDSignIn.sharedInstance()?.delegate = self
         
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            if let signInVC = sb.instantiateViewController(withIdentifier: "GoogleSignInViewController") as? UIViewController{
-                
-                window?.rootViewController = signInVC
-            self.window?.makeKeyAndVisible()
-            GIDSignIn.sharedInstance()?.serverClientID = "SERVER_CLIENT_ID"
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            if let signInVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
+//
+//                window?.rootViewController = signInVC
+//            self.window?.makeKeyAndVisible()
+            //GIDSignIn.sharedInstance()?.serverClientID = "SERVER_CLIENT_ID"
             
             
         return true
         }
-    }
     
     //sign in handler/ connect handler
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!){
@@ -40,9 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if(error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
                 print("The user has not signed in before or they have signed out since then.")
             }
-            else{
+            else {
                 print("\(error.localizedDescription)")
             }
+
             NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"), object:nil,userInfo: nil)
             return
         }
@@ -53,43 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let familyName = user.profile.familyName
         let email = user.profile.email
         NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"),object:nil, userInfo: ["statusText": "Signed in user: \n\(fullName!)"])
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let url = URL(string: "https://scuroommatefinder.herokuapp.com/api/users")!
-//        var request = URLRequest(url: url)
-////        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//        request.httpMethod = "POST"
-//        guard let userOAUTHID = user.serverAuthCode
-//            else {return}
-//        let parameters: [String: String] = [
-//            "oauthID":userOAUTHID
-//        ]
-//        request.httpBody = parameters.percentEscaped().data(using: .utf8)
-//
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard let data = data,
-//                let response = response as? HTTPURLResponse,
-//                error == nil else {                                              // check for fundamental networking error
-//                print("error", error ?? "Unknown error")
-//                return
-//            }
-//
-//            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-//                print("statusCode should be 2xx, but is \(response.statusCode)")
-//                print("response = \(response)")
-//                return
-//            }
-//
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(responseString)")
-//        }
-//
-//        task.resume()
-
-        
-        if let basicProfileVC = sb.instantiateViewController(withIdentifier: "BasicProfileViewController") as? UIViewController{
-            window?.rootViewController = basicProfileVC
-            self.window?.makeKeyAndVisible()
-        }
     }
     
     //disconnect handler

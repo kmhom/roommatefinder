@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class ViewController: UIViewController{
     
+    
     //protocol member
     var jsonPassedThroughViews: [String : String] = [:]
     var jsonDelegate: JSONTransferDelegateProtocol? = nil
@@ -18,8 +19,10 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
 
+    
     
     //MARK: Properties
     
@@ -32,7 +35,9 @@ class ViewController: UIViewController{
                 print("Yes clicked")
         
         GIDSignIn.sharedInstance()?.signOut()
-                self.performSegue(withIdentifier: "backToSignIn", sender: self)
+        let signInScreen = self.storyboard?.instantiateViewController(withIdentifier: "GoogleSignInViewController") as! GoogleSignInViewController
+                signInScreen.modalPresentationStyle = .fullScreen
+        self.present(signInScreen, animated:true)
                 
                 
                 

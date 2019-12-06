@@ -1,25 +1,29 @@
 //
-//  userProfile.swift
+//  UserProfileSignOutViewController.swift
 //  SimpleApp
 //
-//  Created by Kevin Hom on 11/6/19.
+//  Created by akshay on 11/25/19.
 //  Copyright © 2019 Kevin Hom. All rights reserved.
 //
 
 import UIKit
+import GoogleSignIn
 
-class userProfile: UIViewController {
+class UserProfileSignOutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Signout"
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBOutlet weak var ageTextField: UILabel!
-    
-    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBAction func signOut(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signOut()
+        let signInScreen = self.storyboard?.instantiateViewController(withIdentifier: "GoogleSignInViewController") as! GoogleSignInViewController
+        signInScreen.modalPresentationStyle = .fullScreen
+        self.present(signInScreen, animated:true)
+    }
     
     /*
     // MARK: - Navigation
